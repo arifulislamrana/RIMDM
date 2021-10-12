@@ -13,6 +13,6 @@ class ClassLevelSeeder extends Seeder
      */
     public function run()
     {
-        //
+        \App\Models\ClassLevel::factory(5)->create();
     }
 }

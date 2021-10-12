@@ -9,6 +9,11 @@ use Mockery\Matcher\Subset;
 class ClassLevel extends Model
 {
     use HasFactory;
+    public $timestamps = false;
+
+    protected $fillable = [
+        'name',
+    ];
 
 
     public function users()
