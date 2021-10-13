@@ -22,7 +22,8 @@ class NoticeFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'heading' => $this->faker->name(),
+            'body' => $this->faker->text($maxNbChars = 50),
         ];
     }
 }

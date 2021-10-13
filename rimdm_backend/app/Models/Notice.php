@@ -8,4 +8,13 @@ use Illuminate\Database\Eloquent\Model;
 class Notice extends Model
 {
     use HasFactory;
+    public $timestamps = false;
+
+    protected $fillable = [
+        'name',
+        'heading',
+        'body',
+        'img',
+        'file',
+    ];
 }
