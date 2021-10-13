@@ -9,6 +9,19 @@ class Teacher extends Model
 {
     use HasFactory;
 
+    public $timestamps = false;
+
+    protected $fillable = [
+
+        'name',
+        'designation',
+        'mobile',
+        'email',
+        'role_id',
+        'qualification',
+
+    ];
+
     public function classLevels()
     {
         return $this->belongsToMany(ClassLevel::class,'class_level_teacher');

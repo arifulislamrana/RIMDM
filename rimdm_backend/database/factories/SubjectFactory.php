@@ -1,7 +1,7 @@
 <?php
 
 namespace Database\Factories;
-
+use Illuminate\Support\Facades\DB;
 use App\Models\Subject;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
@@ -21,8 +21,10 @@ class SubjectFactory extends Factory
      */
     public function definition()
     {
+        $classes = DB::table('class_levels')->count();
         return [
-            //
+            'name' => $this->faker->name(),
+            'class_level_id' => rand(1,$classes-1),
         ];
     }
 }

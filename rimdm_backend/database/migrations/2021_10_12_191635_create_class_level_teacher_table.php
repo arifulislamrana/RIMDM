@@ -29,6 +29,12 @@ class CreateClassLevelTeacherTable extends Migration
      */
     public function down()
     {
+        Schema::table('class_level_teacher', function (Blueprint $table) {
+            $table->dropForeign(['class_level_id']);
+            $table->dropColumn('class_level_id');
+            $table->dropForeign(['teacher_id']);
+            $table->dropColumn('teacher_id');
+        });
         Schema::dropIfExists('class_level_teacher');
     }
 }

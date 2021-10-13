@@ -9,6 +9,16 @@ use Mockery\Matcher\Subset;
 class Result extends Model
 {
     use HasFactory;
+    public $timestamps = false;
+
+    protected $fillable = [
+
+        'user_id',
+        'subject_id',
+        'marks',
+        'term',
+        'comments',
+    ];
 
     public function user()
     {

@@ -27,6 +27,7 @@ class AddClassLevelIdToUsersTable extends Migration
     public function down()
     {
         Schema::table('users', function (Blueprint $table) {
+            $table->dropForeign(['class_level_id']);
             $table->dropColumn('class_level_id');
         });
     }

@@ -8,8 +8,12 @@ use Illuminate\Database\Eloquent\Model;
 class Subject extends Model
 {
     use HasFactory;
+    public $timestamps = false;
 
-    
+    protected $fillable = [
+        'name',
+    ];
+
 
     public function classLevel()
     {
@@ -17,9 +21,9 @@ class Subject extends Model
     }
 
 
-
     public function results()
     {
         return $this->hasMany(Result::class);
     }
+
 }

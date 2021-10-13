@@ -20,7 +20,7 @@ class CreateResultsTable extends Migration
             $table->foreignId('subject_id')->constrained('subjects')
             ->onUpdate('cascade')->onDelete('cascade');
             $table->string('term');
-            $table->double('marks',3,2);
+            $table->double('marks',5,2);
             $table->text('comments');
         });
     }

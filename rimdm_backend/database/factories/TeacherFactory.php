@@ -4,6 +4,7 @@ namespace Database\Factories;
 
 use App\Models\Teacher;
 use Illuminate\Database\Eloquent\Factories\Factory;
+use Illuminate\Support\Facades\DB;
 
 class TeacherFactory extends Factory
 {
@@ -21,8 +22,17 @@ class TeacherFactory extends Factory
      */
     public function definition()
     {
+        $role = DB::table('roles')->count();
         return [
-            //
+
+            'name' => $this->faker->name(),
+            'designation' => $this->faker->name(),
+            'qualification' => $this->faker->name(),
+            'phone' => $this->faker->phoneNumber(),
+            'email' => $this->faker->unique()->safeEmail(),
+            'role_id' => rand(1,$role-1),
+
+
         ];
     }
 }
