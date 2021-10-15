@@ -18,6 +18,7 @@ class Result extends Model
         'marks',
         'term',
         'comments',
+        'year',
     ];
 
     public function user()
