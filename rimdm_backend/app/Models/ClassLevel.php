@@ -4,7 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Mockery\Matcher\Subset;
+
 
 class ClassLevel extends Model
 {
@@ -23,7 +23,7 @@ class ClassLevel extends Model
 
     public function subjects()
     {
-        return $this->hasMany(Subset::class);
+        return $this->hasMany(Subject::class);
     }
 
     public function teachers()

@@ -32,7 +32,8 @@ class ResultFactory extends Factory
             'subject_id' => rand(1,$subject-1),
             'term' => rand(1,3),
             'marks' => $marks[rand(0,2)],
-            'comments' => $this->faker->text($maxNbChars = 20) ,
+            'comments' => $this->faker->text($maxNbChars = 20),
+            'year' => '2021',
 
 
         ];
