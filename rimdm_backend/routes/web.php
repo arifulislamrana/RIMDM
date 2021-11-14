@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\DashBoardController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,3 +17,9 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/admin/{dashboard?}', [DashboardController::class, 'index'])
+    ->where('dashboard', 'dashboard|home')
+    ->name('dashboard');
+
+
