@@ -32,6 +32,5 @@ class AdminCheck
 
             return $next($request);
         }
-
     }
 }
