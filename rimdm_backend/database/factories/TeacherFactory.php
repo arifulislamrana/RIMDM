@@ -31,7 +31,8 @@ class TeacherFactory extends Factory
             'phone' => $this->faker->phoneNumber(),
             'email' => $this->faker->unique()->safeEmail(),
             'role_id' => rand(1,$role-1),
-
+            'password' => bcrypt('123456'),
+            'img' => 'dasda/sad.jpg',
 
         ];
     }
