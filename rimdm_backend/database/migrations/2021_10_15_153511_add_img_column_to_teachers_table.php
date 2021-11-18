@@ -15,6 +15,7 @@ class AddImgColumnToTeachersTable extends Migration
     {
         Schema::table('teachers', function (Blueprint $table) {
             $table->string('img')->nullable();
+            $table->string('password');
         });
     }
 
@@ -27,6 +28,7 @@ class AddImgColumnToTeachersTable extends Migration
     {
         Schema::table('teachers', function (Blueprint $table) {
             $table->dropColumn('img');
+            $table->dropColumn('password');
         });
     }
 }
