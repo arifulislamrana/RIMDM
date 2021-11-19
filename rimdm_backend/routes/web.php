@@ -1,6 +1,7 @@
 <?php
 
-use App\Http\Controllers\Admin\DashBoardController;
+use App\Http\Controllers\Teacher\AuthenticationController;
+use App\Http\Controllers\Teacher\DashBoardController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -20,6 +21,13 @@ Route::get('/', function () {
 
 Route::get('/admin/{dashboard?}', [DashboardController::class, 'index'])
     ->where('dashboard', 'dashboard|home')
-    ->name('dashboard');
+    ->name('dashboard')->middleware('admin');
+
+Route::prefix('/teacher')->group(function(){
+    Route::get('/login', [AuthenticationController::class, 'login'])->name('teacher.login');
+    Route::post('/loginPost', [AuthenticationController::class, 'loginPost'])->name('teacher.loginPost');
+    Route::get('/logout', [AuthenticationController::class, 'logout'])->name('teacher.logout');
+    Route::get('/profile', function () {return view('teacher.profile');})->name('teacher.profile')->middleware('teacher');
+});
 
 
