@@ -25,6 +25,7 @@ class WebServiceProvider extends ServiceProvider
         $this->app->bind(IUserRepository::class, UserRepository::class);
         $this->app->bind(ITeacherRepository::class, TeacherRepository::class);
         $this->app->bind(ITeacherService::class, TeacherService::class);
+        $this->app->bind(ILogger::class, Logger::class);
     }
 
     /**
