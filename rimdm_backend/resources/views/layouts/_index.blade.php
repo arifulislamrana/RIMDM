@@ -109,12 +109,8 @@
                     <div class="col-12 col-md-6 col-lg-3">
                         <div class="foot-about">
                             <a class="foot-logo" href="#"><img src="/front/images/foot-logo.png" alt=""></a>
-
                             <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia dese mollit anim id est laborum. </p>
-
-                            <p class="footer-copyright"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
-<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+                            <p class="footer-copyright">Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved by {{ config('app.name') }} Authority</p>
                         </div><!-- .foot-about -->
                     </div><!-- .col -->
 
