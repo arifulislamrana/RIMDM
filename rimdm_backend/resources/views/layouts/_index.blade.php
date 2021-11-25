@@ -5,6 +5,7 @@
 
     <!-- Required meta tags -->
     <meta charset="utf-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap CSS -->
@@ -24,6 +25,9 @@
 
     <!-- Styles -->
     <link rel="stylesheet" href="/front/style.css">
+
+    @yield('styles');
+
 </head>
 <body>
     <div class="hero-content">
@@ -192,6 +196,8 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 <script type='text/javascript' src='/front/js/masonry.pkgd.min.js'></script>
 <script type='text/javascript' src='/front/js/jquery.collapsible.min.js'></script>
 <script type='text/javascript' src='/front/js/custom.js'></script>
+
+@yield('scripts');
 
 </body>
 </html>
