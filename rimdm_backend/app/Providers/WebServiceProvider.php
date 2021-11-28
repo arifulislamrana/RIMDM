@@ -10,6 +10,10 @@ use App\Repository\TeacherRepository\ITeacherRepository;
 use App\Repository\TeacherRepository\TeacherRepository;
 use App\Repository\UserRepository\IUserRepository;
 use App\Repository\UserRepository\UserRepository;
+use App\Services\ClassLevel\ClassService;
+use App\Services\ClassLevel\IClassService;
+use App\Services\Student\IStudentService;
+use App\Services\Student\StudentService;
 use App\Services\Teacher\ITeacherService;
 use App\Services\Teacher\TeacherService;
 use Illuminate\Support\ServiceProvider;
@@ -29,6 +33,8 @@ class WebServiceProvider extends ServiceProvider
         $this->app->bind(ITeacherService::class, TeacherService::class);
         $this->app->bind(ILogger::class, Logger::class);
         $this->app->bind(IClassRepository::class, ClassRepository::class);
+        $this->app->bind(IClassService::class, ClassService::class);
+        $this->app->bind(IStudentService::class, StudentService::class);
     }
 
     /**
