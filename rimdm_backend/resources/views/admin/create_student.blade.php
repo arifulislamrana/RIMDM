@@ -43,35 +43,35 @@
                 <div class="card-body row">
                     <div class="form-group col-md-6">
                         <label for="exampleInputName1">Student Name</label>
-                        <input type="text" class="form-control" placeholder="Enter Student Name">
+                        <input type="text" class="form-control" placeholder="Enter Student Name" name="name" value="{{old('name')}}" required>
                     </div>
                     <div class="form-group col-md-6">
                         <label for="exampleInputNumber1">Roll no.</label>
-                        <input type="number" class="form-control" placeholder="Enter Student Roll no.">
+                        <input type="number" class="form-control" placeholder="Enter Student Roll no." name="roll" value="{{old('roll')}}" required>
                     </div>
                     <div class="form-group col-md-6">
                         <label for="exampleInputName1">Father Name</label>
-                        <input type="text" class="form-control" placeholder="Enter Father Name">
+                        <input type="text" class="form-control" placeholder="Enter Father Name" name="fname" value="{{old('fname')}}" required>
                     </div>
                     <div class="form-group col-md-6">
                         <label for="exampleInputName1">Mother Name</label>
-                        <input type="text" class="form-control" placeholder="Enter Mother Name">
+                        <input type="text" class="form-control" placeholder="Enter Mother Name" name="mname" value="{{old('mname')}}" required>
                     </div>
                     <div class="form-group col-md-6">
                         <label for="exampleInputMobile1">Mobile no.</label>
-                        <input type="text" class="form-control" placeholder="Enter Student Mobile no.">
+                        <input type="text" class="form-control" placeholder="Enter Student Mobile no." name="phone" value="{{old('phone')}}" required>
                     </div>
                     <div class="form-group col-md-6">
                         <label for="exampleInputEmail1">Email address</label>
-                        <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
+                        <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email" name="email" value="{{old('email')}}">
                     </div>
                     <div class="form-group col-md-6">
                         <label for="exampleInputDate1">Date of Birth</label>
-                        <input type="date" class="form-control" id="reservationdate" placeholder="Enter email">
+                        <input type="date" class="form-control" id="reservationdate" placeholder="Enter email" name="dob" value="{{old('dob')}}" required>
                     </div>
                     <div class="form-group col-md-6">
                         <label>Select Class</label>
-                        <select class="form-control select1" style="width: 100%;" name="class">
+                        <select class="form-control select1" style="width: 100%;" name="class" value="{{old('class')}}" required>
                           <option style="height: 15px;">one</option>
                           <option>two</option>
                           <option>three</option>
@@ -82,13 +82,13 @@
                       </div>
                     <div class="form-group col-md-6">
                         <label for="exampleInputPassword1">Password</label>
-                        <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                        <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" name="password" required>
                     </div>
                     <div class="form-group col-md-6">
                         <label for="exampleInputFile">Select Image</label>
                         <div class="input-group">
                             <div class="custom-file">
-                                <input type="file" class="custom-file-input" id="exampleInputFile">
+                                <input type="file" class="custom-file-input" id="exampleInputFile" name="image">
                                 <label class="custom-file-label" for="exampleInputFile">Choose file</label>
                             </div>
                         </div>

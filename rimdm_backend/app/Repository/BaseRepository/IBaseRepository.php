@@ -14,4 +14,5 @@ interface IBaseRepository
     public function where(...$where): Builder;
     public function with(...$with): Builder;
     public function validate($attributes);
+    public function getAll();
 }

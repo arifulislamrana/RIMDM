@@ -56,5 +56,10 @@ abstract class BaseRepository implements IBaseRepository
         return $this->model->validate($attributes);
     }
 
+    public function getAll()
+    {
+        return $this->model->all();
+    }
+
 
 }

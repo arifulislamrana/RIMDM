@@ -4,6 +4,8 @@ namespace App\Providers;
 
 use App\Repository\BaseRepository\BaseRepository;
 use App\Repository\BaseRepository\IBaseRepository;
+use App\Repository\ClassRepository\ClassRepository;
+use App\Repository\ClassRepository\IClassRepository;
 use App\Repository\TeacherRepository\ITeacherRepository;
 use App\Repository\TeacherRepository\TeacherRepository;
 use App\Repository\UserRepository\IUserRepository;
@@ -26,6 +28,7 @@ class WebServiceProvider extends ServiceProvider
         $this->app->bind(ITeacherRepository::class, TeacherRepository::class);
         $this->app->bind(ITeacherService::class, TeacherService::class);
         $this->app->bind(ILogger::class, Logger::class);
+        $this->app->bind(IClassRepository::class, ClassRepository::class);
     }
 
     /**
