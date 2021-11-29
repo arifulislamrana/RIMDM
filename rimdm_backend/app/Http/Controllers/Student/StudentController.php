@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Student;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\CreateStudent;
 use Illuminate\Http\Request;
 
 class StudentController extends Controller
@@ -35,9 +36,12 @@ class StudentController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(CreateStudent $request)
     {
-        //
+       $studentData =  $request->getObject();
+       $studentData->img = $request->file('image');
+
+        dd($studentData);
     }
 
     /**

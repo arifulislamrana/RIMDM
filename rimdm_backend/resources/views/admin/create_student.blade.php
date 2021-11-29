@@ -39,7 +39,8 @@
               </div>
               <!-- /.card-header -->
               <!-- form start -->
-              <form>
+              <form action="{{Route('student.store')}}" method="post" enctype="multipart/form-data">
+                @csrf
                 <div class="card-body row">
                     <div class="form-group col-md-6">
                         <label for="exampleInputName1">Student Name</label>
@@ -96,7 +97,7 @@
                     </div>
                     <div class="form-group col-md-6">
                       <label for="exampleInputText1">Home address</label>
-                      <textarea name="" id="exampleInputEmail1" style="width: 100%;" name="address" value="{{old('address')}}"></textarea>
+                      <textarea id="exampleInputEmail1" style="width: 100%;" name="address" value="{{old('address')}}"></textarea>
                   </div>
                 </div>
                 <!-- /.card-body -->

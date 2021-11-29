@@ -4,6 +4,7 @@ namespace App\Http\Requests;
 
 use App\DataObjects\User;
 use Illuminate\Foundation\Http\FormRequest;
+use Symfony\Component\HttpFoundation\InputBag;
 
 class CreateStudent extends FormRequest
 {
@@ -32,11 +33,10 @@ class CreateStudent extends FormRequest
             'roll' => 'required',
             'phone' => 'required',
             'email' => 'required',
-            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg',
+            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             'class' => 'required',
             'password' => 'required|min:6',
             'cpassword' => 'required|min:6',
-            'address' =>  '',
         ];
     }
 
@@ -51,10 +51,9 @@ class CreateStudent extends FormRequest
         $user->email = $this->request->get('email');
         $user->password = $this->request->get('password');
         $user->cpassword = $this->request->get('cpassword');
-        $user->class_level_id = $this->request->get('cpassword');
+        $user->class_level_id = $this->request->get('class');
         $user->roll = $this->request->get('roll');
         $user->phone = $this->request->get('phone');
-        $user->img = $this->request->get('image');
         $user->address = $this->request->get('address');
 
         return $user;

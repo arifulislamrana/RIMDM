@@ -31,6 +31,7 @@ Route::prefix('/teacher')->group(function(){
     Route::get('/profile', function () {return view('teacher.profile');})->name('teacher.profile')->middleware('teacher');
 
     Route::get('/create/student', [StudentController::class, 'create'])->name('student.create');
+    Route::post('/store/student', [StudentController::class, 'store'])->name('student.store');
 });
 
 
