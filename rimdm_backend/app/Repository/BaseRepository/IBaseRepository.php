@@ -3,6 +3,7 @@ namespace App\Repository\BaseRepository;
 
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Collection;
 
 interface IBaseRepository
 {
@@ -14,5 +15,5 @@ interface IBaseRepository
     public function where(...$where): Builder;
     public function with(...$with): Builder;
     public function validate($attributes);
-    public function getAll();
+    public function getAll(): Collection;
 }

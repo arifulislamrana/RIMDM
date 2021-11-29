@@ -72,12 +72,9 @@
                     <div class="form-group col-md-6">
                         <label>Select Class</label>
                         <select class="form-control select1" style="width: 100%;" name="class" value="{{old('class')}}" required>
-                          <option style="height: 15px;">one</option>
-                          <option>two</option>
-                          <option>three</option>
-                          <option>four</option>
-                          <option>five</option>
-                          <option>six</option>
+                          @foreach ($StudentClassesModel->classes as $classLevel)
+                          <option value="{{$classLevel->id}}">{{ $classLevel->name }}</option>
+                          @endforeach
                         </select>
                       </div>
                     <div class="form-group col-md-6">

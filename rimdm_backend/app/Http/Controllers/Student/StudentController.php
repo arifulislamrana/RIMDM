@@ -24,7 +24,10 @@ class StudentController extends Controller
      */
     public function create()
     {
-        return view('admin.create_student');
+        $StudentClassesModel = resolve('App\ViewModels\Student\StudentsClassesModel');
+        $StudentClassesModel->load();
+        //dd($StudentClassesModel);
+        return view('admin.create_student', ['StudentClassesModel' => $StudentClassesModel]);
     }
 
     /**
