@@ -82,6 +82,10 @@
                         <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" name="password" required>
                     </div>
                     <div class="form-group col-md-6">
+                        <label for="exampleInputPassword1">Confirm Password</label>
+                        <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Confirm Password" name="cpassword" required>
+                    </div>
+                    <div class="form-group col-md-6">
                         <label for="exampleInputFile">Select Image</label>
                         <div class="input-group">
                             <div class="custom-file">
@@ -90,6 +94,10 @@
                             </div>
                         </div>
                     </div>
+                    <div class="form-group col-md-6">
+                      <label for="exampleInputText1">Home address</label>
+                      <textarea name="" id="exampleInputEmail1" style="width: 100%;" name="address" value="{{old('address')}}"></textarea>
+                  </div>
                 </div>
                 <!-- /.card-body -->
 
