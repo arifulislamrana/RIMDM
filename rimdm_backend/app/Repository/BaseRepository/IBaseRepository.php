@@ -16,4 +16,5 @@ interface IBaseRepository
     public function with(...$with): Builder;
     public function validate($attributes);
     public function getAll(): Collection;
+    public function create(array $data);
 }

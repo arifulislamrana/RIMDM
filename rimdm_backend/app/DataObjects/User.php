@@ -4,12 +4,12 @@ namespace App\DataObjects;
 class User
 {
     public $name;
-    public $fname;
-    public $mname;
+    public $f_name;
+    public $m_name;
     public $phone;
     public $email;
     public $roll;
-    public $img;
+    public $image;
     public $password;
     public $cpassword;
     public $class_level_id;

@@ -4,10 +4,19 @@ namespace App\Http\Controllers\Student;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\CreateStudent;
+use App\Utility\ILogger;
+use Exception;
 use Illuminate\Http\Request;
 
 class StudentController extends Controller
 {
+    private $logger;
+
+    public function __construct(ILogger $logger)
+    {
+        $this->logger = $logger;
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -25,9 +34,18 @@ class StudentController extends Controller
      */
     public function create()
     {
-        $StudentClassesModel = resolve('App\ViewModels\Student\StudentsClassesModel');
-        $StudentClassesModel->load();
-        return view('admin.create_student', ['StudentClassesModel' => $StudentClassesModel]);
+        try
+        {
+            $StudentClassesModel = resolve('App\ViewModels\Student\StudentsClassesModel');
+            $StudentClassesModel->load();
+
+            return view('admin.create_student', ['StudentClassesModel' => $StudentClassesModel]);
+        }
+        catch (Exception $e)
+        {
+            $this->logger->write("error", "Failed to show Student Addmission Form", $e);
+            return response()->json(['error' => 'Failed to show form'], 409);
+        }
     }
 
     /**
@@ -38,10 +56,28 @@ class StudentController extends Controller
      */
     public function store(CreateStudent $request)
     {
-       $studentData =  $request->getObject();
-       $studentData->img = $request->file('image');
+        try
+        {
+            $createStudentModel = resolve('App\ViewModels\Student\CreateStudentModel');
 
-        dd($studentData);
+            if ($createStudentModel->isPasswordMismatch($request))
+            {
+                return redirect()->back()->withErrors(['invalid' => 'PassWord and Confirm PassWord Should Be Same']);
+            }
+
+            if ($createStudentModel->isStudentRollTaken($request))
+            {
+                return redirect()->back()->withErrors(['invalid' => 'This Roll in this class already been taken']);
+            }
+
+            $student = $createStudentModel->storeStudentData($request);
+        }
+        catch (Exception $e)
+        {
+            $this->logger->write("error", "Failed to Strore Student Data", $e);
+
+            return redirect()->back()->withErrors(['invalid' => 'data could not be saved. Please try again']);
+        }
     }
 
     /**

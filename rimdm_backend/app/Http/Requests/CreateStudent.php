@@ -45,8 +45,8 @@ class CreateStudent extends FormRequest
         $user = new User();
 
         $user->name = $this->request->get('name');
-        $user->fname = $this->request->get('fname');
-        $user->mname = $this->request->get('mname');
+        $user->f_name = $this->request->get('fname');
+        $user->m_name = $this->request->get('mname');
         $user->dob = $this->request->get('dob');
         $user->email = $this->request->get('email');
         $user->password = $this->request->get('password');

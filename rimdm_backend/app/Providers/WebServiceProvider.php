@@ -2,21 +2,23 @@
 
 namespace App\Providers;
 
+use App\Utility\Logger;
+use App\Utility\ILogger;
+use Illuminate\Support\ServiceProvider;
+use App\Services\Student\StudentService;
+use App\Services\Teacher\TeacherService;
+use App\Services\ClassLevel\ClassService;
+use App\Services\Student\IStudentService;
+use App\Services\Teacher\ITeacherService;
+use App\Services\ClassLevel\IClassService;
 use App\Repository\BaseRepository\BaseRepository;
+use App\Repository\UserRepository\UserRepository;
 use App\Repository\BaseRepository\IBaseRepository;
+use App\Repository\UserRepository\IUserRepository;
 use App\Repository\ClassRepository\ClassRepository;
 use App\Repository\ClassRepository\IClassRepository;
-use App\Repository\TeacherRepository\ITeacherRepository;
 use App\Repository\TeacherRepository\TeacherRepository;
-use App\Repository\UserRepository\IUserRepository;
-use App\Repository\UserRepository\UserRepository;
-use App\Services\ClassLevel\ClassService;
-use App\Services\ClassLevel\IClassService;
-use App\Services\Student\IStudentService;
-use App\Services\Student\StudentService;
-use App\Services\Teacher\ITeacherService;
-use App\Services\Teacher\TeacherService;
-use Illuminate\Support\ServiceProvider;
+use App\Repository\TeacherRepository\ITeacherRepository;
 
 class WebServiceProvider extends ServiceProvider
 {

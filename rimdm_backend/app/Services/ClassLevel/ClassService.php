@@ -20,7 +20,8 @@ class ClassService implements IClassService
 
         if (empty($classes))
         {
-            throw new Exception("No Classes exist");
+            return redirect()->back()
+        	->withErrors(['invalid' => 'No Class Exist.']);
         }
 
         return $classes;

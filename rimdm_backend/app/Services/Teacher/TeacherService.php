@@ -21,7 +21,8 @@ class TeacherService implements ITeacherService
 
         if (empty($teacher))
         {
-            throw new Exception("Teacher does not exist");
+            return redirect()->back()
+        	->withErrors(['invalid' => 'No Teacher Exist For This Email.']);
         }
 
         return $teacher;
