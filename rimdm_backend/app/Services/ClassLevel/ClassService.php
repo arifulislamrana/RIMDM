@@ -27,4 +27,17 @@ class ClassService implements IClassService
         return $classes;
     }
 
+    public function getClassById($id)
+    {
+        $class = $this->classRepository->find($id);
+
+        if (empty($class))
+        {
+            return redirect()->back()
+        	->withErrors(['invalid' => 'No Class Exists.']);
+        }
+
+        return $class;
+    }
+
 }

@@ -51,4 +51,9 @@ class StudentService implements IStudentService
 
         return $student;
     }
+
+    public function getStudentsOfSpecificClass($classId)
+    {
+        return $this->userRepository->getStudentsOfSpecificClass($classId);
+    }
 }

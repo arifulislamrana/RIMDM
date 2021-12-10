@@ -11,4 +11,12 @@ class UserRepository extends BaseRepository implements IUserRepository {
     {
         parent::__construct($model);
     }
+
+    public function getStudentsOfSpecificClass($classId)
+    {
+        $productsQuery = $this->where('class_level_id', $classId);
+        $students = $productsQuery->orderBy('roll', 'desc')->get();
+
+        return $students;
+    }
 }

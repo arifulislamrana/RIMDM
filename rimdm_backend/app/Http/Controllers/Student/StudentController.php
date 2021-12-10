@@ -19,18 +19,25 @@ class StudentController extends Controller
 
     /**
      * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        //
+        try
+        {
+            $StudentTableModel = resolve('App\ViewModels\Student\StudentsTableModel');
+            $StudentTableModel->load($request);
+
+            return view('admin.student_table', ['StudentTableModel' => $StudentTableModel]);
+        }
+        catch (Exception $e)
+        {
+            $this->logger->write("error", "Failed to show Students List", $e);
+            return response()->json(['error' => 'Failed to show Students List'], 409);
+        }
     }
 
     /**
      * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
      */
     public function create()
     {
@@ -50,9 +57,6 @@ class StudentController extends Controller
 
     /**
      * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
      */
     public function store(CreateStudent $request)
     {
@@ -71,6 +75,8 @@ class StudentController extends Controller
             }
 
             $student = $createStudentModel->storeStudentData($request);
+
+            //return ...................
         }
         catch (Exception $e)
         {
