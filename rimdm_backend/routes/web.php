@@ -33,6 +33,7 @@ Route::prefix('/teacher')->group(function(){
     Route::get('/create/student', [StudentController::class, 'create'])->name('student.create');
     Route::post('/store/student', [StudentController::class, 'store'])->name('student.store');
     Route::get('/students', [StudentController::class, 'index'])->name('student.index');
+    Route::delete('/students/{id}', [StudentController::class, 'destroy'])->name('student.destroy');
 });
 
 

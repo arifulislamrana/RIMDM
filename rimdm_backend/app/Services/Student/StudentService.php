@@ -56,4 +56,9 @@ class StudentService implements IStudentService
     {
         return $this->userRepository->getStudentsOfSpecificClass($classId);
     }
+
+    public function removeStudent($id)
+    {
+        return $this->userRepository->destroy($id);
+    }
 }

@@ -128,6 +128,25 @@ class StudentController extends Controller
      */
     public function destroy($id)
     {
-        //
+        try
+        {
+            $studentTableModel = resolve('App\ViewModels\Student\StudentsTableModel');
+
+            if ($studentTableModel->destroyStudentData($id))
+            {
+                return redirect()->back()->with('message', 'Student Data Removed');
+            }
+            else
+            {
+                return redirect()->back()->withErrors(['invalid' => 'Student Data cant be Removed at this time.']);
+            }
+
+        }
+        catch (Exception $e)
+        {
+            $this->logger->write("error", "Student Data cant be Removed at this time.", $e);
+
+            return redirect()->back()->withErrors(['invalid' => 'Something Went Wrong. Try Later.']);
+        }
     }
 }

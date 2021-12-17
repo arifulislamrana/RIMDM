@@ -41,4 +41,9 @@ class StudentsTableModel
         $this->students = $this->studentService->getStudentsOfSpecificClass($requestClassId);
         $this->studentsCount = count($this->students);
     }
+
+    public function destroyStudentData($id)
+    {
+        return $this->studentService->removeStudent($id);
+    }
 }
