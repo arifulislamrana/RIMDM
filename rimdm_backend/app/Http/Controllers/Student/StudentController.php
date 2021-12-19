@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Student;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\CreateStudent;
+use App\Http\Requests\UpdateStudent;
 use App\Utility\ILogger;
 use Exception;
 use Illuminate\Http\Request;
@@ -76,7 +77,7 @@ class StudentController extends Controller
 
             $student = $createStudentModel->storeStudentData($request);
 
-            //return ...................
+            return redirect()->route('student.index', ['class' => $student->class_level_id]);
         }
         catch (Exception $e)
         {
@@ -105,7 +106,19 @@ class StudentController extends Controller
      */
     public function edit($id)
     {
-        //
+        try
+        {
+            $updateStudentModel = resolve('App\ViewModels\Student\StudentUpdateModel');
+            $updateStudentModel->load($id);
+
+            return view('admin.update_student', ['updateStudentModel' => $updateStudentModel]);
+        }
+        catch (Exception $e)
+        {
+            $this->logger->write("error", "Failed to show student update form", $e);
+
+            return redirect()->back()->withErrors(['invalid' => 'data could not be saved. Please try again']);
+        }
     }
 
     /**
@@ -115,9 +128,21 @@ class StudentController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(UpdateStudent $request, $id)
     {
-        //
+        try
+        {
+            $updateStudentModel = resolve('App\ViewModels\Student\StudentUpdateModel');
+            $student = $updateStudentModel->updateStudentData($request, $id);
+
+            return redirect()->route('student.index', ['class' => $student->class_level_id]);
+        }
+        catch (Exception $e)
+        {
+            $this->logger->write("error", "Failed to update student data", $e);
+
+            return redirect()->back()->withErrors(['invalid' => 'data could not be saved. Please recheck input']);
+        }
     }
 
     /**

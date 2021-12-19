@@ -13,4 +13,8 @@ interface IStudentService
     public function getStudentsOfSpecificClass($classId);
 
     public function removeStudent($id);
+
+    public function getStudentById($id);
+
+    public function updateStudent(User $student, $id);
 }
