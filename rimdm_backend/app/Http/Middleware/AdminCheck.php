@@ -19,7 +19,7 @@ class AdminCheck
     {
         if (!Auth::guard('teacher')->check())
         {
-            return redirect()->back();
+            return redirect()->route('teacher.login');
         }
         else
         {

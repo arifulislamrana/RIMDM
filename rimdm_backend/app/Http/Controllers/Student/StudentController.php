@@ -89,20 +89,26 @@ class StudentController extends Controller
 
     /**
      * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
      */
     public function show($id)
     {
-        //
+        try
+        {
+            $studentData = resolve('App\ViewModels\Student\StudentProfileModel');
+            $studentData->load($id);
+
+            return view('admin.student_profile', ['studentData' => $studentData]);
+        }
+        catch (Exception $e)
+        {
+            $this->logger->write("error", "Failed to show student Profile", $e);
+
+            return redirect()->back()->withErrors(['invalid' => 'Unable To Show Student Data.']);
+        }
     }
 
     /**
      * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
      */
     public function edit($id)
     {
@@ -123,10 +129,6 @@ class StudentController extends Controller
 
     /**
      * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
      */
     public function update(UpdateStudent $request, $id)
     {
@@ -147,9 +149,6 @@ class StudentController extends Controller
 
     /**
      * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
      */
     public function destroy($id)
     {
