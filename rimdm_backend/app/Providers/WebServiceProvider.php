@@ -2,15 +2,23 @@
 
 namespace App\Providers;
 
-use App\Repository\BaseRepository\BaseRepository;
-use App\Repository\BaseRepository\IBaseRepository;
-use App\Repository\TeacherRepository\ITeacherRepository;
-use App\Repository\TeacherRepository\TeacherRepository;
-use App\Repository\UserRepository\IUserRepository;
-use App\Repository\UserRepository\UserRepository;
-use App\Services\Teacher\ITeacherService;
-use App\Services\Teacher\TeacherService;
+use App\Utility\Logger;
+use App\Utility\ILogger;
 use Illuminate\Support\ServiceProvider;
+use App\Services\Student\StudentService;
+use App\Services\Teacher\TeacherService;
+use App\Services\ClassLevel\ClassService;
+use App\Services\Student\IStudentService;
+use App\Services\Teacher\ITeacherService;
+use App\Services\ClassLevel\IClassService;
+use App\Repository\BaseRepository\BaseRepository;
+use App\Repository\UserRepository\UserRepository;
+use App\Repository\BaseRepository\IBaseRepository;
+use App\Repository\UserRepository\IUserRepository;
+use App\Repository\ClassRepository\ClassRepository;
+use App\Repository\ClassRepository\IClassRepository;
+use App\Repository\TeacherRepository\TeacherRepository;
+use App\Repository\TeacherRepository\ITeacherRepository;
 
 class WebServiceProvider extends ServiceProvider
 {
@@ -26,6 +34,9 @@ class WebServiceProvider extends ServiceProvider
         $this->app->bind(ITeacherRepository::class, TeacherRepository::class);
         $this->app->bind(ITeacherService::class, TeacherService::class);
         $this->app->bind(ILogger::class, Logger::class);
+        $this->app->bind(IClassRepository::class, ClassRepository::class);
+        $this->app->bind(IClassService::class, ClassService::class);
+        $this->app->bind(IStudentService::class, StudentService::class);
     }
 
     /**

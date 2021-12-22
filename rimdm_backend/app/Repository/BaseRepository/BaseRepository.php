@@ -3,6 +3,7 @@ namespace App\Repository\BaseRepository;
 
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Collection;
 
 abstract class BaseRepository implements IBaseRepository
 {
@@ -56,5 +57,13 @@ abstract class BaseRepository implements IBaseRepository
         return $this->model->validate($attributes);
     }
 
+    public function getAll(): Collection
+    {
+        return $this->model->all();
+    }
 
+    public function create(array $data)
+    {
+        return $this->model->create($data);
+    }
 }

@@ -36,6 +36,8 @@ class UserFactory extends Factory
             'password' => bcrypt('123456'), // password
             'remember_token' => Str::random(10),
             'class_level_id' => rand(1,$classes-1),
+            'image' => "",
+            'address' => "barir thikana"
         ];
     }
 
