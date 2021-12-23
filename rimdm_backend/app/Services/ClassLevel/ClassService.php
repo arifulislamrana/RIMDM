@@ -2,16 +2,20 @@
 
 namespace App\Services\ClassLevel;
 
+use App\DataObjects\ClassSubjectTeacherList;
 use Exception;
 use App\Repository\ClassRepository\IClassRepository;
+use App\Repository\SubjectRepository\ISubjectRepository;
 
 class ClassService implements IClassService
 {
     public $classRepository;
+    public $subjectRepository;
 
-    public function __construct(IClassRepository $classRepository)
+    public function __construct(IClassRepository $classRepository, ISubjectRepository $subjectRepository)
     {
         $this->classRepository = $classRepository;
+        $this->subjectRepository = $subjectRepository;
     }
 
     public function getAllClasses()
@@ -38,6 +42,31 @@ class ClassService implements IClassService
         }
 
         return $class;
+    }
+
+    public function classSubjectTeachersList($classId)
+    {
+        $subjects = $this->subjectRepository->getSubjectsByClassId($classId);
+
+        if (empty($subjects))
+        {
+            return redirect()->back()
+        	->withErrors(['invalid' => 'Subject List is not Included.']);
+        }
+
+        $list = [];
+
+        foreach ($subjects as $subject)
+        {
+            $classSubjectTeacherList = new ClassSubjectTeacherList();
+            $classSubjectTeacherList->subjectName = $subject->name;
+            $classSubjectTeacherList->teacherName = $subject->teacher->name;
+            $classSubjectTeacherList->teacherPhone = $subject->teacher->phone;
+            $classSubjectTeacherList->image = $subject->teacher->img;
+            array_push($list, $classSubjectTeacherList);
+        }
+
+        return $list;
     }
 
 }

@@ -1,6 +1,6 @@
 @extends('admin._index')
 
-@section('title', 'Teachers profile')
+@section('title', 'Student profile')
 
 @section('style')
 

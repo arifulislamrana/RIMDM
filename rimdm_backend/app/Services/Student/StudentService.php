@@ -71,7 +71,7 @@ class StudentService implements IStudentService
         if (empty($student))
         {
             return redirect()->back()
-        	->withErrors(['invalid' => 'No Class Exists.']);
+        	->withErrors(['invalid' => 'No Such Student Exists.']);
         }
 
         return $student;

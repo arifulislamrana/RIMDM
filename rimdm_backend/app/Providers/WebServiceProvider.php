@@ -17,8 +17,14 @@ use App\Repository\BaseRepository\IBaseRepository;
 use App\Repository\UserRepository\IUserRepository;
 use App\Repository\ClassRepository\ClassRepository;
 use App\Repository\ClassRepository\IClassRepository;
+use App\Repository\ResultRepository\IResultRepository;
+use App\Repository\ResultRepository\ResultRepository;
+use App\Repository\SubjectRepository\ISubjectRepository;
+use App\Repository\SubjectRepository\SubjectRepository;
 use App\Repository\TeacherRepository\TeacherRepository;
 use App\Repository\TeacherRepository\ITeacherRepository;
+use App\Services\Result\IResultService;
+use App\Services\Result\ResultService;
 
 class WebServiceProvider extends ServiceProvider
 {
@@ -37,6 +43,9 @@ class WebServiceProvider extends ServiceProvider
         $this->app->bind(IClassRepository::class, ClassRepository::class);
         $this->app->bind(IClassService::class, ClassService::class);
         $this->app->bind(IStudentService::class, StudentService::class);
+        $this->app->bind(IResultRepository::class, ResultRepository::class);
+        $this->app->bind(ISubjectRepository::class, SubjectRepository::class);
+        $this->app->bind(IResultService::class, ResultService::class);
     }
 
     /**
