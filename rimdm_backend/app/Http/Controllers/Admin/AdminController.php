@@ -14,7 +14,10 @@ class AdminController extends Controller
      */
     public function index()
     {
-        dd('hello');
+        $adminList = resolve('App\ViewModels\Admin\AdminListModel');
+        $adminList->load();
+dd($adminList);
+        return view('admin.admins.admin_list',['adminList'=>$adminList]);
     }
 
     /**

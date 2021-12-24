@@ -5,8 +5,8 @@
 @section('style')
 <link rel="stylesheet" href="../../back/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
 <link rel="stylesheet" href="../../back/plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
-{{-- <link rel="stylesheet" href="../../back/plugins/select2/css/select2.min.css">
-<link rel="stylesheet" href="../../back/plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css"> --}}
+<link rel="stylesheet" href="../../back/plugins/select2/css/select2.min.css">
+<link rel="stylesheet" href="../../back/plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css">
 @endsection
 
 @section('content')
@@ -25,6 +25,20 @@
             </ol>
           </div>
         </div>
+        <form action="{{ Route('student.index') }}" id="form-1" method="GET" enctype="multipart/form-data">
+          @csrf
+          <div class="card-body row">
+              <div class="form-group col-md-4">
+                <label>Select Class</label>
+                <select class="form-control select1" style="width: 100%;" name="class" value="{{old('class')}}"  onchange="submitForm()" required>
+                  <option>Select class for students list</option>
+                  @foreach ($StudentTableModel->classes as $classLevel)
+                  <option value="{{$classLevel->id}}">{{ $classLevel->name }}</option>
+                  @endforeach
+                </select>
+              </div>
+          </div>
+        </form>
       </div><!-- /.container-fluid -->
     </section>
 
