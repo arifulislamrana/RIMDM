@@ -27,6 +27,13 @@ class TeacherService implements ITeacherService
 
         return $teacher;
     }
+
+    public function getAllTeacher()
+    {
+        $teachers = $this->teacherRepository->getAll();
+
+        return $teachers;
+    }
 }
 
 ?>
