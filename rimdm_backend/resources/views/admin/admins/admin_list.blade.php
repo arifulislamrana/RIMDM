@@ -1,12 +1,10 @@
 @extends('admin._index')
 
-@section('title','Students Table')
+@section('title','Admins Table')
 
 @section('style')
 <link rel="stylesheet" href="../../back/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
 <link rel="stylesheet" href="../../back/plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
-<link rel="stylesheet" href="../../back/plugins/select2/css/select2.min.css">
-<link rel="stylesheet" href="../../back/plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css">
 @endsection
 
 @section('content')
@@ -16,16 +14,16 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>Students Tables</h1>
+            <h1>Admins Tables</h1>
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="#">Home</a></li>
-              <li class="breadcrumb-item active">Students Table</li>
+              <li class="breadcrumb-item active">Admins Table</li>
             </ol>
           </div>
         </div>
-        <form action="{{ Route('student.index') }}" id="form-1" method="GET" enctype="multipart/form-data">
+        {{-- <form action="#" id="form-1" method="GET" enctype="multipart/form-data">
           @csrf
           <div class="card-body row">
               <div class="form-group col-md-4">
@@ -38,7 +36,7 @@
                 </select>
               </div>
           </div>
-        </form>
+        </form> --}}
       </div><!-- /.container-fluid -->
     </section>
 
@@ -69,50 +67,45 @@
                 </div>
                 @endif
 
-                <h3 class="card-title">Students of class: {{ $StudentTableModel->classOfsearchingStudents->name  }}</h3>
+                <h3 class="card-title">Admins  &  Super Admins</h3>
               </div>
               <!-- /.card-header -->
               <div class="card-body">
-
-                @if ($StudentTableModel->studentsCount < 1)
-                <h2 style="text-align: center"> No students Exists in class: {{ $StudentTableModel->classOfsearchingStudents->name  }}</h2>
-                @else
                 <table id="example2" class="table table-bordered table-hover">
                   <thead>
                     <tr>
-                      <th>Roll</th>
                       <th>Name</th>
-                      <th>Father</th>
+                      <th>Email</th>
+                      <th>Role</th>
                       <th>Image</th>
                       <th>Actions</th>
                     </tr>
                   </thead>
                   <tbody>
 
-                    @foreach ($StudentTableModel->students as $student)
+                    @foreach ($adminList->allAdmins as $admin)
                     <tr>
-                      <td>{{ $student->roll }}</td>
-                      <td>{{ $student->name }}
-                      </td>
-                      <td>{{ $student->f_name }}</td>
-                      <td> <img src="{{$student->image}}" alt="" style="border-radius: 50%; height: 50px; width: 65px"> </td>
+                      <td>{{ $admin->name }}</td>
+                      <td>{{ $admin->email }}</td>
+                      <td>{{ $admin->role }}</td>
+                      <td> <img src="{{$admin->img}}" alt="" style="border-radius: 50%; height: 50px; width: 65px"> </td>
                       <td style="text-align: center; display: flex">
-                        <button class="btn btn-info"><a href="{{ Route('student.show',['id' => $student->id]) }}" style="font-style: none; color: white">Details</a></button>
-                        <button class="btn btn-primary"><a href="{{ Route('student.edit', ['id' => $student->id]) }}" style="font-style: none; color: white">Update</a></button>
-                        <button class="btn btn-danger" onclick="showModal({{$student->id}})" data-userid="{{$student->id}}">Delete</button>
+                        <button class="btn btn-info"><a href="#" style="font-style: none; color: white">Details</a></button>
+                        <button class="btn btn-primary"><a href="#" style="font-style: none; color: white">Update</a></button>
+                        <button class="btn btn-danger" onclick="showModal({{$admin->id}})" data-userid="{{$admin->id}}">Remove</button>
                       </td>
                     </tr>
-                    <div id="applicantDeleteModal-{{$student->id}}" class="modal modal-danger fade" tabindex="-1" role="dialog" aria-labelledby="custom-width-modalLabel" aria-hidden="true" style="display: none;">
+                    <div id="applicantDeleteModal-{{$admin->id}}" class="modal modal-danger fade" tabindex="-1" role="dialog" aria-labelledby="custom-width-modalLabel" aria-hidden="true" style="display: none;">
                       <div class="modal-dialog" style="width:55%;">
                           <div class="modal-content">
-                              <form action="{{route('student.destroy', ['id' => $student->id])}}" method="POST" class="remove-record-model">
+                              <form action="#" method="POST" class="remove-record-model">
                                 @csrf
                                 {{ method_field('delete') }}
                                 <div class="modal-header">
-                                    <h4 class="modal-title text-center" id="custom-width-modalLabel">Delete Alert</h4>
+                                    <h4 class="modal-title text-center" id="custom-width-modalLabel">Remove Alert</h4>
                                 </div>
                                 <div class="modal-body">
-                                    <h4>Delete This Student?</h4>
+                                    <h4>Remove This Admin?</h4>
                                 </div>
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-default waves-effect" data-dismiss="modal">NO</button>
@@ -127,15 +120,14 @@
                   </tbody>
                   <tfoot>
                   <tr>
-                    <th>Roll</th>
                     <th>Name</th>
-                    <th>Father</th>
+                    <th>Email</th>
+                    <th>Role</th>
                     <th>Image</th>
                     <th>Actions</th>
                   </tr>
                   </tfoot>
                 </table>
-                @endif
 
               </div>
               <!-- /.card-body -->
@@ -176,21 +168,5 @@
       });
     });
   </script>
-  <script src="../../back/plugins/select2/js/select2.full.min.js"></script>
-  <script>
-      $(function () {
-        //Initialize Select2 Elements
-        $('.select2').select2()
-        //Initialize Select2 Elements
-        $('.select2bs4').select2({
-          theme: 'bootstrap4'
-        })
-      })
-  </script>
-  <script>
-    function submitForm() {
-        const form = document.getElementById(`form-1`);
-        form.submit();
-    }
-</script>
+
 @endsection

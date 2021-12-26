@@ -1,7 +1,9 @@
 <?php
-namespace App\Services\role;
+namespace App\Services\Role;
 
 interface IRoleService
 {
     public function getAdmins();
+    public function getSuperAdmins();
+ 
 }

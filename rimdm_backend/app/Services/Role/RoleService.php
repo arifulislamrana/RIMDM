@@ -2,7 +2,6 @@
 namespace App\Services\Role;
 
 use App\Repository\RoleRepository\IRoleRepository;
-use App\Repository\TeacherRepository\ITeacherRepository;
 
 class RoleService implements IRoleService
 {
@@ -24,5 +23,18 @@ class RoleService implements IRoleService
         }
 
         return $admins;
+    }
+
+    public function getSuperAdmins()
+    {
+        $superAdmin = $this->roleRepository->getSuperAdmins();
+
+        if (empty($superAdmin))
+        {
+            return redirect()->back()
+            ->withErrors(['invalid' => 'No Super Admin Exists.']);
+        }
+
+        return $superAdmin;
     }
 }

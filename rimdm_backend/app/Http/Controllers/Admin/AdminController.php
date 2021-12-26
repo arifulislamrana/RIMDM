@@ -16,7 +16,7 @@ class AdminController extends Controller
     {
         $adminList = resolve('App\ViewModels\Admin\AdminListModel');
         $adminList->load();
-dd($adminList);
+        // dd($adminList);
         return view('admin.admins.admin_list',['adminList'=>$adminList]);
     }
 
