@@ -25,4 +25,9 @@ class TeacherListModel
         $this->teachers = $this->teacherService->getAllTeacher();
         $this->teachersCount = count($this->teachers);
     }
+
+    public function destroyTeacherData($id)
+    {
+        return $this->teacherService->removeTeacher($id);
+    }
 }

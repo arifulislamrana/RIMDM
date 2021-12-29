@@ -27,7 +27,7 @@ class TeacherController extends Controller
         {
             $teacherListModel = resolve('App\ViewModels\Teacher\TeacherListModel');
             $teacherListModel->load();
-
+//dd( $teacherListModel);
             return view('admin.teacher.teachers_list', ['teacherListModel' => $teacherListModel]);
         }
         catch (Exception $e)
@@ -100,6 +100,25 @@ class TeacherController extends Controller
      */
     public function destroy($id)
     {
-        dd('Nothing Done');
+        try
+        {
+            $teacherListModel = resolve('App\ViewModels\Teacher\TeacherListModel');
+
+            if ($teacherListModel->destroyTeacherData($id))
+            {
+                return redirect()->back()->with('message', 'Teacher Data Removed');
+            }
+            else
+            {
+                return redirect()->back()->withErrors(['invalid' => 'Teacher Data cant be Removed at this time.']);
+            }
+
+        }
+        catch (Exception $e)
+        {
+            $this->logger->write("error", "Teacher Data cant be Removed at this time.", $e);
+
+            return redirect()->back()->withErrors(['invalid' => 'Something Went Wrong. Try Later.']);
+        }
     }
 }

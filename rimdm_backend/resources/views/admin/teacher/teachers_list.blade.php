@@ -48,8 +48,13 @@
                 @endif
 
                 @if(session()->has('message'))
-                <div class="alert alert-success">
-                    {{ session()->get('message') }}
+                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                  <ul class="p-0 m-0" style="list-style: none;">
+                    <li>{{ session()->get('message') }}</li>
+                  </ul>
                 </div>
                 @endif
 
@@ -81,15 +86,15 @@
                       <td>{{ $teacher->phone }}</td>
                       <td> <img src="{{$teacher->img}}" alt="" style="border-radius: 50%; height: 50px; width: 65px"> </td>
                       <td style="text-align: center; display: flex">
-                        <button class="btn btn-info"><a href="#" style="font-style: none; color: white">Details</a></button>
-                        <button class="btn btn-primary"><a href="#" style="font-style: none; color: white">Update</a></button>
+                        <button class="btn btn-info"><a href="{{ Route('teachers.show', ['teacher' => $teacher->id]) }}" style="font-style: none; color: white">Details</a></button>
+                        <button class="btn btn-primary"><a href="{{ Route('teachers.edit', ['teacher' => $teacher->id]) }}" style="font-style: none; color: white">Update</a></button>
                         <button class="btn btn-danger" onclick="showModal({{$teacher->id}})" data-userid="{{$teacher->id}}">Delete</button>
                       </td>
                     </tr>
                     <div id="applicantDeleteModal-{{$teacher->id}}" class="modal modal-danger fade" tabindex="-1" role="dialog" aria-labelledby="custom-width-modalLabel" aria-hidden="true" style="display: none;">
                       <div class="modal-dialog" style="width:55%;">
                           <div class="modal-content">
-                              <form action="#" method="POST" class="remove-record-model">
+                              <form action="{{ Route('teachers.destroy', ['teacher' => $teacher->id]) }}" method="POST" class="remove-record-model">
                                 @csrf
                                 {{ method_field('delete') }}
                                 <div class="modal-header">
