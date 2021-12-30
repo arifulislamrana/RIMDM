@@ -6,6 +6,7 @@ use Exception;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Utility\ILogger;
+use GuzzleHttp\RetryMiddleware;
 
 class TeacherController extends Controller
 {
@@ -27,7 +28,7 @@ class TeacherController extends Controller
         {
             $teacherListModel = resolve('App\ViewModels\Teacher\TeacherListModel');
             $teacherListModel->load();
-//dd( $teacherListModel);
+
             return view('admin.teacher.teachers_list', ['teacherListModel' => $teacherListModel]);
         }
         catch (Exception $e)
@@ -44,7 +45,15 @@ class TeacherController extends Controller
      */
     public function create()
     {
-        dd('Nothing Done');
+        try
+        {
+            return view('admin.teacher.create_teacher');
+        }
+        catch (Exception $e)
+        {
+            $this->logger->write("error", "Failed to show Create Teacher Form", $e);
+            return response()->json(['error' => 'Failed to show Create Teacher Form'], 409);
+        }
     }
 
     /**

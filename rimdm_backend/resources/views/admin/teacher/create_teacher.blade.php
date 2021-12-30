@@ -1,6 +1,6 @@
 @extends('admin._index')
 
-@section('title','createStudent')
+@section('title','createTeacher')
 
 @section('style')
 <link rel="stylesheet" href="../../back/plugins/select2/css/select2.min.css">
@@ -14,12 +14,12 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>Admission Form</h1>
+            <h1>Teacher Form</h1>
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="#">Home</a></li>
-              <li class="breadcrumb-item active">Admission Form</li>
+              <li class="breadcrumb-item active">Teacher Form</li>
             </ol>
           </div>
         </div>
@@ -35,7 +35,7 @@
             <!-- general form elements -->
             <div class="card card-primary">
               <div class="card-header">
-                <h3 class="card-title">Add New Student</h3>
+                <h3 class="card-title">Add New Teacher</h3>
               </div>
               <!-- /.card-header -->
               <!-- form start -->
@@ -52,24 +52,20 @@
               </div>
               @endif
 
-              <form action="{{Route('student.store')}}" method="post" enctype="multipart/form-data">
+              <form action="{{Route('teachers.store')}}" method="post" enctype="multipart/form-data">
                 @csrf
                 <div class="card-body row">
                     <div class="form-group col-md-6">
-                        <label for="exampleInputName1">Student Name</label>
-                        <input type="text" class="form-control" placeholder="Enter Student Name" name="name" value="{{old('name')}}" required>
+                        <label for="exampleInputName1">Teacher Name</label>
+                        <input type="text" class="form-control" placeholder="Enter Teacher" name="name" value="{{old('name')}}" required>
                     </div>
                     <div class="form-group col-md-6">
-                        <label for="exampleInputNumber1">Roll no.</label>
-                        <input type="number" class="form-control" placeholder="Enter Student Roll no." name="roll" value="{{old('roll')}}" required>
+                        <label for="exampleInputName1">Designation</label>
+                        <input type="text" class="form-control" placeholder="Enter Designation" name="designation" value="{{old('designation')}}" required>
                     </div>
                     <div class="form-group col-md-6">
-                        <label for="exampleInputName1">Father Name</label>
-                        <input type="text" class="form-control" placeholder="Enter Father Name" name="fname" value="{{old('fname')}}" required>
-                    </div>
-                    <div class="form-group col-md-6">
-                        <label for="exampleInputName1">Mother Name</label>
-                        <input type="text" class="form-control" placeholder="Enter Mother Name" name="mname" value="{{old('mname')}}" required>
+                        <label for="exampleInputName1">Qualification</label>
+                        <input type="text" class="form-control" placeholder="Enter Qualification" name="qualification" value="{{old('qualification')}}" required>
                     </div>
                     <div class="form-group col-md-6">
                         <label for="exampleInputMobile1">Mobile no.</label>
@@ -78,26 +74,6 @@
                     <div class="form-group col-md-6">
                         <label for="exampleInputEmail1">Email address</label>
                         <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email" name="email" value="{{old('email')}}">
-                    </div>
-                    <div class="form-group col-md-6">
-                        <label for="exampleInputDate1">Date of Birth</label>
-                        <input type="date" class="form-control" id="reservationdate" placeholder="Enter email" name="dob" value="{{old('dob')}}" required>
-                    </div>
-                    <div class="form-group col-md-6">
-                        <label>Select Class</label>
-                        <select class="form-control select1" style="width: 100%;" name="class" value="{{old('class')}}" required>
-                          @foreach ($StudentClassesModel->classes as $classLevel)
-                          <option value="{{$classLevel->id}}">{{ $classLevel->name }}</option>
-                          @endforeach
-                        </select>
-                      </div>
-                    <div class="form-group col-md-6">
-                        <label for="exampleInputPassword1">Password</label>
-                        <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" name="password" required>
-                    </div>
-                    <div class="form-group col-md-6">
-                        <label for="exampleInputPassword1">Confirm Password</label>
-                        <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Confirm Password" name="cpassword" required>
                     </div>
                     <div class="form-group col-md-6">
                         <label for="exampleInputFile">Select Image</label>
@@ -109,9 +85,13 @@
                         </div>
                     </div>
                     <div class="form-group col-md-6">
-                      <label for="exampleInputText1">Home address</label>
-                      <textarea id="exampleInputEmail1" style="width: 100%;" name="address" value="{{old('address')}}"></textarea>
-                  </div>
+                        <label for="exampleInputPassword1">Password</label>
+                        <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" name="password" required>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="exampleInputPassword1">Confirm Password</label>
+                        <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Confirm Password" name="cpassword" required>
+                    </div>
                 </div>
                 <!-- /.card-body -->
 
