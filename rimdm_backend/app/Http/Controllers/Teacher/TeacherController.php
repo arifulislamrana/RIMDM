@@ -6,6 +6,7 @@ use Exception;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\CreateTeacher;
+use App\Http\Requests\UpdateTeacher;
 use App\Utility\ILogger;
 use GuzzleHttp\RetryMiddleware;
 
@@ -105,7 +106,19 @@ class TeacherController extends Controller
      */
     public function edit($id)
     {
-        dd('Nothing Done');
+        try
+        {
+            $updateTeacherModel = resolve('App\ViewModels\Teacher\UpdateTeacherModel');
+            $updateTeacherModel->load($id);
+
+            return view('admin.teacher.update_teacher', ['updateTeacherModel' => $updateTeacherModel]);
+        }
+        catch (Exception $e)
+        {
+            $this->logger->write("error", "Failed to Show Teacher Update Form", $e);
+
+            return redirect()->back()->withErrors(['invalid' => 'Cant Update Now. Please try later']);
+        }
     }
 
     /**
@@ -115,9 +128,21 @@ class TeacherController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(UpdateTeacher $request, $id)
     {
-        dd('Nothing Done');
+        try
+        {
+            $updateTeacherModel = resolve('App\ViewModels\Teacher\UpdateTeacherModel');
+            $updateTeacherModel->updateTeacher($request, $id);
+
+            return redirect()->route('teachers.index');
+        }
+        catch (Exception $e)
+        {
+            $this->logger->write("error", "Failed to Show Teacher Update Form", $e);
+
+            return redirect()->back()->withErrors(['invalid' => 'Cant Update Now. Please try later']);
+        }
     }
 
     /**
