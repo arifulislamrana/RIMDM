@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Teacher;
 use Exception;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Http\Requests\CreateTeacher;
 use App\Utility\ILogger;
 use GuzzleHttp\RetryMiddleware;
 
@@ -62,9 +63,27 @@ class TeacherController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(CreateTeacher $request)
     {
-        dd('Nothing Done');
+        try
+        {
+            $createTeacherModel = resolve('App\ViewModels\Teacher\CreateTeacherModel');
+
+            if ($request->password != $request->cpassword)
+            {
+                return redirect()->back()->withErrors(['invalid' => 'PassWord and Confirm PassWord Should Be Same']);
+            }
+
+            $teacher = $createTeacherModel->storeTeacherData($request);
+
+            return redirect()->route('teachers.index');
+        }
+        catch (Exception $e)
+        {
+            $this->logger->write("error", "Failed to Strore Teacher Data", $e);
+
+            return redirect()->back()->withErrors(['invalid' => 'data could not be saved. Please try again']);
+        }
     }
 
     /**

@@ -1,15 +1,24 @@
 <?php
 namespace App\ViewModels\Teacher;
 
+use App\Http\Requests\CreateTeacher;
 use App\Services\Role\IRoleService;
+use App\Services\Teacher\ITeacherService;
 
 class CreateTeacherModel
 {
-    private $roleService;
+    private $teacherService;
     public $roles;
 
-    public function __construct(IRoleService $roleService)
+    public function __construct(ITeacherService $teacherService)
     {
-        $this->roleService = $roleService;
+        $this->teacherService = $teacherService;
+    }
+
+    public function storeTeacherData(CreateTeacher $request)
+    {
+        $teacher = $request->getObject();
+
+        return $this->teacherService->saveTeacherData($teacher);
     }
 }

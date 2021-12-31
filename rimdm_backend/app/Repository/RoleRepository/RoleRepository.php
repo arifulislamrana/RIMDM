@@ -11,4 +11,9 @@ class RoleRepository extends BaseRepository implements IRoleRepository
     {
         parent::__construct($model);
     }
+
+    public function getRoleByName($name)
+    {
+        return $this->model->where(['name' => $name])->first();
+    }
 }

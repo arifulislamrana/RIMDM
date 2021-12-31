@@ -5,4 +5,5 @@ use App\Repository\BaseRepository\IBaseRepository;
 
 interface IRoleRepository extends IBaseRepository
 {
+    public function getRoleByName($name);
 }
