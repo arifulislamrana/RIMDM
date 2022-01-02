@@ -41,7 +41,5 @@ class TeacherProfileModel
             $subject['class'] = $sub->classLevel->name;
             array_push($this->teacherClassDetails, $subject);
         }
-
-        //dd($this->teacherClassDetails);
     }
 }
