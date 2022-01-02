@@ -36,6 +36,7 @@ class TeacherController extends Controller
         catch (Exception $e)
         {
             $this->logger->write("error", "Failed to show Teachers List", $e);
+
             return response()->json(['error' => 'Failed to show Teachers List'], 409);
         }
     }
@@ -54,6 +55,7 @@ class TeacherController extends Controller
         catch (Exception $e)
         {
             $this->logger->write("error", "Failed to show Create Teacher Form", $e);
+
             return response()->json(['error' => 'Failed to show Create Teacher Form'], 409);
         }
     }
@@ -95,7 +97,19 @@ class TeacherController extends Controller
      */
     public function show($id)
     {
-        dd('Nothing Done');
+        try
+        {
+            $teacherProfileModel = resolve('App\ViewModels\Teacher\TeacherProfileModel');
+            $teacherProfileModel->load($id);
+
+            return view('admin.teacher.profile', ['teacherProfileModel' => $teacherProfileModel]);
+        }
+        catch (Exception $e)
+        {
+            $this->logger->write("error", "Failed to Show Teacher profile", $e);
+
+            return redirect()->back()->withErrors(['invalid' => 'Failed to Show Teacher profile']);
+        }
     }
 
     /**
