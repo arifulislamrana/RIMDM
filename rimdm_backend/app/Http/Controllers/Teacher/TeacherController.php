@@ -3,12 +3,13 @@
 namespace App\Http\Controllers\Teacher;
 
 use Exception;
+use App\Utility\ILogger;
 use Illuminate\Http\Request;
+use GuzzleHttp\RetryMiddleware;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\CreateTeacher;
 use App\Http\Requests\UpdateTeacher;
-use App\Utility\ILogger;
-use GuzzleHttp\RetryMiddleware;
+use Illuminate\Support\Facades\Auth;
 
 class TeacherController extends Controller
 {

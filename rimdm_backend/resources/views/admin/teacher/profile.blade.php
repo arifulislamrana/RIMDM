@@ -43,6 +43,12 @@
 
                 <h3 class="profile-username text-center">
                   {{$teacherProfileModel->teacher->name}}
+                    @if ($teacherProfileModel->role == 'admin')
+                      <a class="float-right">*</a>
+                    @endif
+                    @if ($teacherProfileModel->role == 'super admin')
+                      <a class="float-right" style="font-size: 50px">**</a>
+                    @endif
                 </h3>
 
                 <p class="text-muted text-center">{{$teacherProfileModel->teacher->designation}}</p>

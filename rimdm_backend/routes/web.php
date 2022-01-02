@@ -42,6 +42,6 @@ Route::prefix('/teacher')->group(function(){
     Route::get('/students/{id}', [StudentController::class, 'show'])->name('student.show')->middleware('admin');
 });
 
-Route::resource('/teachers', TeacherController::class);
+Route::resource('/teachers', TeacherController::class)->middleware('admin');
 
 
