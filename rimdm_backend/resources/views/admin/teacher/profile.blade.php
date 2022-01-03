@@ -81,7 +81,6 @@
                 <ul class="nav nav-pills">
                   <li class="nav-item"><a class="nav-link active" href="#activity" data-toggle="tab">Class Details</a></li>
                   <li class="nav-item"><a class="nav-link" href="#timeline" data-toggle="tab">My Posts</a></li>
-                  <li class="nav-item"><a class="nav-link" href="#settings" data-toggle="tab">Create Post</a></li>
                 </ul>
               </div><!-- /.card-header -->
               <div class="card-body">
@@ -126,10 +125,6 @@
                     </div>
                   </div>
                   <!-- /.tab-pane -->
-
-                  <div class="tab-pane" id="settings">
-                    Class teachers Post will be included
-                  </div>
                   <!-- /.tab-pane -->
                 </div>
                 <!-- /.tab-content -->

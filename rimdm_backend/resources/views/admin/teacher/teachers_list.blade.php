@@ -81,14 +81,15 @@
                     @foreach ($teacherListModel->teachers as $teacher)
                     <tr>
                       <td>{{ $teacher->name }}</td>
-                      <td>{{ $teacher->email }}
-                      </td>
+                      <td>{{ $teacher->email }}</td>
                       <td>{{ $teacher->phone }}</td>
                       <td> <img src="{{$teacher->img}}" alt="" style="border-radius: 50%; height: 50px; width: 65px"> </td>
                       <td style="text-align: center; display: flex">
                         <button class="btn btn-info"><a href="{{ Route('teachers.show', ['teacher' => $teacher->id]) }}" style="font-style: none; color: white">Details</a></button>
+                        @if (Auth::guard('teacher')->user()->role->name == 'super admin')
                         <button class="btn btn-primary"><a href="{{ Route('teachers.edit', ['teacher' => $teacher->id]) }}" style="font-style: none; color: white">Update</a></button>
                         <button class="btn btn-danger" onclick="showModal({{$teacher->id}})" data-userid="{{$teacher->id}}">Delete</button>
+                        @endif
                       </td>
                     </tr>
                     <div id="applicantDeleteModal-{{$teacher->id}}" class="modal modal-danger fade" tabindex="-1" role="dialog" aria-labelledby="custom-width-modalLabel" aria-hidden="true" style="display: none;">
