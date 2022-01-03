@@ -15,4 +15,9 @@ class SubjectRepository extends BaseRepository implements ISubjectRepository
     {
         return $this->model->where(['class_level_id' => $classId])->get();
     }
+
+    public function closeRealtionWithTeacher($teacher_id)
+    {
+        return $this->model->where(['teacher_id' => $teacher_id])->update(['teacher_id' => null]);
+    }
 }

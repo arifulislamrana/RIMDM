@@ -3,6 +3,7 @@ namespace App\Repository\RoleRepository;
 
 use App\Models\Role;
 use App\Repository\BaseRepository\BaseRepository;
+use App\Repository\RoleRepository\IRoleRepository;
 
 class RoleRepository extends BaseRepository implements IRoleRepository
 {
@@ -24,4 +25,9 @@ class RoleRepository extends BaseRepository implements IRoleRepository
 
         return $adminTeachers;
     }
-};
+    
+    public function getRoleByName($name)
+    {
+        return $this->model->where(['name' => $name])->first();
+    }
+}

@@ -2,6 +2,7 @@
 namespace App\Services\Role;
 
 use App\Repository\RoleRepository\IRoleRepository;
+use App\Services\Role\IRoleService;
 
 class RoleService implements IRoleService
 {
@@ -36,5 +37,12 @@ class RoleService implements IRoleService
         }
 
         return $superAdmin;
+    }
+
+    public function getAllRole()
+    {
+        $roles = $this->roleRepository->getAll();
+
+        return $roles;
     }
 }

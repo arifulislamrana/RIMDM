@@ -8,4 +8,6 @@ interface IRoleRepository extends IBaseRepository
     public function getAdmins();
 
     public function getSuperAdmins();
+    
+    public function getRoleByName($name);
 }

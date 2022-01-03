@@ -174,10 +174,10 @@
       <!-- Sidebar user panel (optional) -->
       <div class="user-panel mt-3 pb-3 mb-3 d-flex">
         <div class="image">
-          <img src="/back/dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
+          <img src="{{ Auth::guard('teacher')->user()->img }}" class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
-          <a href="#" class="d-block">Alexander Pierce</a>
+          <a href="#" class="d-block">{{ Auth::guard('teacher')->user()->name }}</a>
         </div>
       </div>
 
@@ -199,14 +199,6 @@
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
           <li class="nav-item">
-            <a href="{{ Route('dashboard') }}" class="nav-link active">
-              <i class="nav-icon fas fa-tachometer-alt"></i>
-              <p>
-                Dashboard
-              </p>
-            </a>
-          </li>
-          <li class="nav-item">
             <a href="{{ Route('teacher.profile') }}" class="nav-link">
               <i class="far fa-circle nav-icon"></i>
               <p>
@@ -214,28 +206,14 @@
               </p>
             </a>
           </li>
+          @if (Auth::guard('teacher')->user()->role->name != 'teacher')
           <li class="nav-item">
-            <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-table"></i>
+            <a href="{{ Route('dashboard') }}" class="nav-link active">
+              <i class="nav-icon fas fa-tachometer-alt"></i>
               <p>
-                Tables
-                <i class="fas fa-angle-left right"></i>
+                Dashboard
               </p>
             </a>
-            <ul class="nav nav-treeview">
-              <li class="nav-item">
-                <a href="pages/tables/simple.html" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Simple Tables</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="pages/tables/data.html" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>DataTables</p>
-                </a>
-              </li>
-            </ul>
           </li>
           <li class="nav-item">
             <a href="#" class="nav-link">
@@ -264,6 +242,31 @@
             <a href="#" class="nav-link">
               <i class="nav-icon fas fa-table"></i>
               <p>
+                Teachers
+                <i class="fas fa-angle-left right"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="{{ Route('teachers.create') }}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Add Teacher</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{ Route('teachers.index') }}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Teachers List</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+          @endif
+          @if (Auth::guard('teacher')->user()->role->name == 'super admin')
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-table"></i>
+              <p>
                 Admins
                 <i class="fas fa-angle-left right"></i>
               </p>
@@ -283,6 +286,7 @@
               </li>
             </ul>
           </li>
+          @endif
         </ul>
       </nav>
       <!-- /.sidebar-menu -->
