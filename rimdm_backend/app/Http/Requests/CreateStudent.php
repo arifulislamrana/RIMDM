@@ -55,6 +55,7 @@ class CreateStudent extends FormRequest
         $user->roll = $this->request->get('roll');
         $user->phone = $this->request->get('phone');
         $user->address = $this->request->get('address');
+        $user->image = $this->file('image');
 
         return $user;
     }

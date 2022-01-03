@@ -18,7 +18,6 @@ class CreateStudentModel
     public function storeStudentData(CreateStudent $request)
     {
         $studentData =  $request->getObject();
-        $studentData->image = $request->file('image');
 
         return $this->studentService->saveStudentData($studentData);
     }
