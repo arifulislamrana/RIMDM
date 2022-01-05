@@ -58,12 +58,24 @@ class ClassService implements IClassService
 
         foreach ($subjects as $subject)
         {
-            $classSubjectTeacherList = new ClassSubjectTeacherList();
-            $classSubjectTeacherList->subjectName = $subject->name;
-            $classSubjectTeacherList->teacherName = $subject->teacher->name;
-            $classSubjectTeacherList->teacherPhone = $subject->teacher->phone;
-            $classSubjectTeacherList->image = $subject->teacher->img;
-            array_push($list, $classSubjectTeacherList);
+            if ($subject->teacher != null)
+            {
+                $classSubjectTeacherList = new ClassSubjectTeacherList();
+                $classSubjectTeacherList->subjectName = $subject->name;
+                $classSubjectTeacherList->teacherName = $subject->teacher->name;
+                $classSubjectTeacherList->teacherPhone = $subject->teacher->phone;
+                $classSubjectTeacherList->image = $subject->teacher->img;
+                array_push($list, $classSubjectTeacherList);
+            }
+            else
+            {
+                $classSubjectTeacherList = new ClassSubjectTeacherList();
+                $classSubjectTeacherList->subjectName = $subject->name;
+                $classSubjectTeacherList->teacherName = 'No Teacher Assigned';
+                $classSubjectTeacherList->teacherPhone = null;
+                $classSubjectTeacherList->image = null;
+                array_push($list, $classSubjectTeacherList);
+            }
         }
 
         return $list;
