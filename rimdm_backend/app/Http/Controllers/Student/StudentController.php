@@ -28,7 +28,7 @@ class StudentController extends Controller
             $StudentTableModel = resolve('App\ViewModels\Student\StudentsTableModel');
             $StudentTableModel->load($request);
 
-            return view('admin.student_table', ['StudentTableModel' => $StudentTableModel]);
+            return view('admin.student.student_table', ['StudentTableModel' => $StudentTableModel]);
         }
         catch (Exception $e)
         {
@@ -47,7 +47,7 @@ class StudentController extends Controller
             $StudentClassesModel = resolve('App\ViewModels\Student\StudentsClassesModel');
             $StudentClassesModel->load();
 
-            return view('admin.create_student', ['StudentClassesModel' => $StudentClassesModel]);
+            return view('admin.student.create_student', ['StudentClassesModel' => $StudentClassesModel]);
         }
         catch (Exception $e)
         {
@@ -97,7 +97,7 @@ class StudentController extends Controller
             $studentData = resolve('App\ViewModels\Student\StudentProfileModel');
             $studentData->load($id);
 
-            return view('admin.student_profile', ['studentData' => $studentData]);
+            return view('admin.student.student_profile', ['studentData' => $studentData]);
         }
         catch (Exception $e)
         {
@@ -117,7 +117,7 @@ class StudentController extends Controller
             $updateStudentModel = resolve('App\ViewModels\Student\StudentUpdateModel');
             $updateStudentModel->load($id);
 
-            return view('admin.update_student', ['updateStudentModel' => $updateStudentModel]);
+            return view('admin.student.update_student', ['updateStudentModel' => $updateStudentModel]);
         }
         catch (Exception $e)
         {

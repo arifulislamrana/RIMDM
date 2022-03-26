@@ -8,12 +8,12 @@
                 <div class="col-12">
                     <div class="hero-content-wrap flex flex-column justify-content-center align-items-start">
                         <header class="entry-header">
-                            <h4>Get started with online courses</h4>
-                            <h1>best online<br/>Learning system</h1>
+                            <h4>A Family of Learning</h4>
+                            <h1>Rongmala Islamia<br/>Mohila Dakhil Madrasa</h1>
                         </header><!-- .entry-header -->
 
                         <div class="entry-content">
-                            <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium</p>
+                            <p>A community with high expectation and high academic achievement</p>
                         </div><!-- .entry-content -->
 
                         <footer class="entry-footer read-more">
@@ -30,16 +30,16 @@
         <div class="container-fluid">
             <div class="flex flex-wrap align-items-stretch">
                 <div class="icon-box">
-                    <div class="icon">
-                        <span class="ti-user"></span>
-                    </div><!-- .icon -->
-
                     <header class="entry-header">
-                        <h2 class="entry-title">Learn From The Experts</h2>
+                        <h2 class="entry-title">Learn With The Experts</h2>
                     </header><!-- .entry-header -->
 
+                    <div class="icon">
+                        <span class="ti-user"> 20</span>
+                    </div><!-- .icon -->
+
                     <div class="entry-content">
-                        <p>Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour.</p>
+                        <p>Our Teachers are highly qualified and certified. They are very student friendly. They always try to support students</p>
                     </div><!-- .entry-content -->
 
                     <footer class="entry-footer read-more">
@@ -48,16 +48,16 @@
                 </div><!-- .icon-box -->
 
                 <div class="icon-box">
-                    <div class="icon">
-                        <span class="ti-folder"></span>
-                    </div><!-- .icon -->
-
                     <header class="entry-header">
-                        <h2 class="entry-title">Book Library & Store</h2>
+                        <h2 class="entry-title">Total Passed Students</h2>
                     </header><!-- .entry-header -->
 
+                    <div class="icon">
+                        <span class="ti-user"> 10k+</span>
+                    </div><!-- .icon -->
+
                     <div class="entry-content">
-                        <p>Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour.</p>
+                        <p>We have 100% of pass record in SSC and PSC. Our students also place in govt. scolarship list </p>
                     </div><!-- .entry-content -->
 
                     <footer class="entry-footer read-more">
@@ -66,16 +66,16 @@
                 </div><!-- .icon-box -->
 
                 <div class="icon-box">
-                    <div class="icon">
-                        <span class="ti-book"></span>
-                    </div><!-- .icon -->
-
                     <header class="entry-header">
-                        <h2 class="entry-title">Best Course Online</h2>
+                        <h2 class="entry-title">Levels</h2>
                     </header><!-- .entry-header -->
 
+                    <div class="icon">
+                        <span class="ti-book">  11</span>
+                    </div><!-- .icon -->
+
                     <div class="entry-content">
-                        <p>Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour.</p>
+                        <p>From play group to 10th standard ipsum dolor sit amet consectetur. Lorem ipsum dolor sit.</p>
                     </div><!-- .entry-content -->
 
                     <footer class="entry-footer read-more">
@@ -84,16 +84,16 @@
                 </div><!-- .icon-box -->
 
                 <div class="icon-box">
-                    <div class="icon">
-                        <span class="ti-world"></span>
-                    </div><!-- .icon -->
-
                     <header class="entry-header">
-                        <h2 class="entry-title">Best Industry Leaders</h2>
+                        <h2 class="entry-title">GPA-5 & Scholarship</h2>
                     </header><!-- .entry-header -->
 
+                    <div class="icon">
+                        <span class="ti-user"> 169</span>
+                    </div><!-- .icon -->
+
                     <div class="entry-content">
-                        <p>Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour.</p>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt dolorum dolorem minima. </p>
                     </div><!-- .entry-content -->
 
                     <footer class="entry-footer read-more">
@@ -103,6 +103,35 @@
             </div><!-- .row -->
         </div><!-- .container-fluid -->
     </div><!-- .icon-boxes -->
+    <section class="featured-courses horizontal-column courses-wrap">
+        <div class="container">
+            <h3><b>Welcome Message from the Principal</b></h3>
+            <div style="display: flex; justify-content: space-between;">
+                <p style="text-align: justify">
+                    Welcome to the official website of Pabna University of Science and Technology (PUST). I hope your visit to this website will give you insights into the many advantages the University has to offer and it will allow you to visit PUST virtually no matter wherever you stay.
+
+                    The present era is the era of science and technology. To keep pace with the progressed world and to meet the global challenges, the government is stepping forward with the promise of establishing Digital Bangladesh. As part of its vision of Digital Bangladesh and with a view to imparting science and technology oriented knowledge, Pabna University of Science and Technology was established in 2008. Since its inception, the University has made steady progress within a very short period of time. The University is growing rapidly in terms of activity, quality, research and reputation. It provides multidisciplinary education with five faculties namely Engineering and Technology, Science, Business Studies, Humanities and Social Science and Life and Earth Science.
+                </p>
+                <a href="" style="text-align: center">
+                    <img src="/front/images/1.jpg" alt="" style="padding: 2%">
+                    <h6>Principal, RIMDM</h6>
+                </a>
+            </div>
+            <div>
+                <p style="text-align: justify">
+                    Now the University has 21 departments under five faculties. Through creating and disseminating knowledge, PUST is trying to promote excellence in higher education by producing skilled manpower and enlightened citizen based on science and technology. Each and every member of this University is working hard to ensure quality education and thereby to accomplish its mission – producing quality graduates to meet the national and global challenges. As a Vice-Chancellor of this university, I dream of producing qualitative and research oriented manpower to solve the existing, long term and newly arisen problems that the country faces every day.
+                    I strongly believe that after completing their education, the PUST graduates will be enlightened citizens and turn into assets for the country and will be able to play a significant role in establishing a Digital Bangladesh and Bangabandhu’s ‘Sonar Bangla’ free from hunger, poverty and corruption.
+
+                    I seek your wholehearted cooperation to discharge the noble responsibility that has been assigned to me to improve this University further to attain a sustainable development that would be dedicated to the enlightenment of the people all over the country.
+                </p>
+                <p class="wellcome_msg">
+                    Md. Ashfaq Ali Khan<br>
+                    <small>Honorable Principal <br> Rongmala Islamia Mohila Dakhil Madrasa</small>
+                </p>
+            </div>
+        </div><!-- .container -->
+        <hr>
+    </section><!-- .courses-wrap -->
 
     <section class="featured-courses horizontal-column courses-wrap">
         <div class="container">
@@ -647,94 +676,5 @@
             </div><!-- .row -->
         </div><!-- .container -->
     </section><!-- .latest-news-events -->
-
-    <section class="home-gallery">
-        <div class="gallery-wrap flex flex-wrap">
-            <div class="gallery-grid gallery-grid1x1">
-                <a href="#"><img src="/front/images/a.jpg" alt=""></a>
-            </div><!-- .gallery-grid -->
-
-            <div class="gallery-grid gallery-grid1x1">
-                <a href="#"><img src="/front/images/b.jpg" alt=""></a>
-            </div><!-- .gallery-grid -->
-
-            <div class="gallery-grid gallery-grid2x2">
-                <a href="#"><img src="/front/images/c.jpg" alt=""></a>
-            </div><!-- .gallery-grid -->
-
-            <div class="gallery-grid gallery-grid1x1">
-                <a href="#"><img src="/front/images/d.jpg" alt=""></a>
-            </div><!-- .gallery-grid -->
-
-            <div class="gallery-grid gallery-grid1x1">
-                <a href="#"><img src="/front/images/e.jpg" alt=""></a>
-            </div><!-- .gallery-grid -->
-
-            <div class="gallery-grid gallery-grid2x1">
-                <a href="#"><img src="/front/images/g.jpg" alt=""></a>
-            </div><!-- .gallery-grid -->
-
-            <div class="gallery-grid gallery-grid2x1">
-                <a href="#"><img src="/front/images/h.jpg" alt=""></a>
-            </div><!-- .gallery-grid -->
-
-            <div class="gallery-grid gallery-grid1x1">
-                <a href="#"><img src="/front/images/i.jpg" alt=""></a>
-            </div><!-- .gallery-grid -->
-
-            <div class="gallery-grid gallery-grid2x2 ">
-                <a href="#"><img src="/front/images/j.jpg" alt=""></a>
-            </div><!-- .gallery-grid -->
-
-            <div class="gallery-grid gallery-grid1x1">
-                <a href="#"><img src="/front/images/k.jpg" alt=""></a>
-            </div><!-- .gallery-grid -->
-
-            <div class="gallery-grid gallery-grid1x1">
-                <a href="#"><img src="/front/images/l.jpg" alt=""></a>
-            </div><!-- .gallery-grid -->
-
-            <div class="gallery-grid gallery-grid2x1">
-                <a href="#"><img src="/front/images/m.jpg" alt=""></a>
-            </div><!-- .gallery-grid -->
-
-            <div class="gallery-grid gallery-grid3x1">
-                <a href="#"><img src="/front/images/n.jpg" alt=""></a>
-            </div><!-- .gallery-grid -->
-
-            <div class="gallery-grid gallery-grid1x1">
-                <a href="#"><img src="/front/images/o.jpg" alt=""></a>
-            </div><!-- .gallery-grid -->
-        </div><!-- .gallery-wrap -->
-    </section><!-- .home-gallery -->
-
-    <div class="clients-logo">
-        <div class="container">
-            <div class="row">
-                <div class="col-12 flex flex-wrap justify-content-center justify-content-lg-between align-items-center">
-                    <div class="logo-wrap">
-                        <img src="/front/images/logo-1.png" alt="">
-                    </div><!-- .logo-wrap -->
-
-                    <div class="logo-wrap">
-                        <img src="/front/images/logo-2.png" alt="">
-                    </div><!-- .logo-wrap -->
-
-                    <div class="logo-wrap">
-                        <img src="/front/images/logo-3.png" alt="">
-                    </div><!-- .logo-wrap -->
-
-                    <div class="logo-wrap">
-                        <img src="/front/images/logo-4.png" alt="">
-                    </div><!-- .logo-wrap -->
-
-                    <div class="logo-wrap">
-                        <img src="/front/images/logo-5.png" alt="">
-                    </div><!-- .logo-wrap -->
-                </div><!-- .col -->
-            </div><!-- .row -->
-        </div><!-- .container -->
-    </div><!-- .clients-logo -->
-
-
+<hr>
     @endsection
