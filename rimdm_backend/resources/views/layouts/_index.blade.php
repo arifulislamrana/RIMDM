@@ -37,11 +37,11 @@
                     <div class="row">
                         <div class="col-12 col-lg-6 d-none d-md-flex flex-wrap justify-content-center justify-content-lg-start mb-3 mb-lg-0">
                             <div class="header-bar-email d-flex align-items-center">
-                                <i class="fa fa-envelope"></i><a href="#">tuanna.design@gmail.com</a>
+                                <i class="fa fa-envelope"></i><a href="#">rimdmadrasah@gmail.com</a>
                             </div><!-- .header-bar-email -->
 
                             <div class="header-bar-text lg-flex align-items-center">
-                                <p><i class="fa fa-phone"></i>001-1234-88888 </p>
+                                <p><i class="fa fa-phone"></i>01629846484 </p>
                             </div><!-- .header-bar-text -->
                         </div><!-- .col -->
 
@@ -55,7 +55,7 @@
 
                             <div class="header-bar-menu">
                                 <ul class="flex justify-content-center align-items-center py-2 pt-md-0">
-                                    <li><a href="#">Register</a></li>
+                                    <li><a href="#">Apply</a></li>
                                     <li><a href="#">Login</a></li>
                                 </ul>
                             </div><!-- .header-bar-menu -->
@@ -69,7 +69,7 @@
                     <div class="row">
                         <div class="col-9 col-lg-3">
                             <div class="site-branding">
-                                <h1 class="site-title"><a href="index.html" rel="home">Ezu<span>ca</span></a></h1>
+                                <h1 class="site-title"><a href="{{ Route('index') }}" rel="home"><span>{{ config('app.name') }}</span></a></h1>
                             </div><!-- .site-branding -->
                         </div><!-- .col -->
 
@@ -78,8 +78,9 @@
                                 <ul class="flex flex-column flex-lg-row justify-content-lg-end align-content-center">
                                     <li class="current-menu-item"><a href="index.html">Home</a></li>
                                     <li><a href="#">About</a></li>
-                                    <li><a href="#">Courses</a></li>
-                                    <li><a href="#">blog</a></li>
+                                    <li><a href="#">Classes</a></li>
+                                    <li><a href="#">Teachers</a></li>
+                                    <li><a href="#">Notice</a></li>
                                     <li><a href="#">Contact</a></li>
                                 </ul>
 
@@ -108,7 +109,7 @@
                 <div class="row">
                     <div class="col-12 col-md-6 col-lg-3">
                         <div class="foot-about">
-                            <a class="foot-logo" href="#"><img src="/front/images/foot-logo.png" alt=""></a>
+                            <h1 class="site-title"><a href="{{ Route('index') }}" rel="home"><span>{{ config('app.name') }}</span></a></h1>
                             <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia dese mollit anim id est laborum. </p>
                             <p class="footer-copyright">Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved by {{ config('app.name') }} Authority</p>
                         </div><!-- .foot-about -->
@@ -119,9 +120,9 @@
                             <h2>Contact Us</h2>
 
                             <ul>
-                                <li>Email: info.deertcreative@gmail.com</li>
+                                <li>Email: rimdmadrasah@gmail.com</li>
                                 <li>Phone: (+88) 111 555 666</li>
-                                <li>Address: 40 Baria Sreet 133/2 NewYork City, US</li>
+                                <li>Address: 07-no Musapur, Companigonj, Noakhali, Bangladesh.</li>
                             </ul>
                         </div><!-- .foot-contact -->
                     </div><!-- .col -->
@@ -131,18 +132,13 @@
                             <h2 class="w-100">Quick Links</h2>
 
                             <ul class="w-50">
-                                <li><a href="#">About </a></li>
-                                <li><a href="#">Terms of Use </a></li>
-                                <li><a href="#">Privacy Policy </a></li>
-                                <li><a href="#">Contact Us</a></li>
+                                <li><a href="#">About</a></li>
+                                <li><a href="#">Classes</a></li>
+                                <li><a href="#">Teachers</a></li>
+                                <li><a href="#">Notice</a></li>
+                                <li><a href="#">Contact</a></li>
                             </ul>
 
-                            <ul class="w-50">
-                                <li><a href="#">Documentation</a></li>
-                                <li><a href="#">Forums</a></li>
-                                <li><a href="#">Language Packs</a></li>
-                                <li><a href="#">Release Status</a></li>
-                            </ul>
                         </div><!-- .quick-links -->
                     </div><!-- .col -->
 
@@ -161,30 +157,6 @@
                 </div><!-- .row -->
             </div><!-- .container -->
         </div><!-- .footer-widgets -->
-
-        <div class="footer-bar">
-            <div class="container">
-                <div class="row flex-wrap justify-content-center justify-content-lg-between align-items-center">
-                    <div class="col-12 col-lg-6">
-                        <div class="download-apps flex flex-wrap justify-content-center justify-content-lg-start align-items-center">
-                            <a href="#"><img src="/front/images/app-store.png" alt=""></a>
-                            <a href="#"><img src="/front/images/play-store.png" alt=""></a>
-                        </div><!-- .download-apps -->
-
-                    </div>
-
-                    <div class="col-12 col-lg-6 mt-4 mt-lg-0">
-                        <div class="footer-bar-nav">
-                            <ul class="flex flex-wrap justify-content-center justify-content-lg-end align-items-center">
-                                <li><a href="#">DPA</a></li>
-                                <li><a href="#">Terms of Use</a></li>
-                                <li><a href="#">Privacy Policy</a></li>
-                            </ul>
-                        </div><!-- .footer-bar-nav -->
-                    </div><!-- .col-12 -->
-                </div><!-- .row -->
-            </div><!-- .container -->
-        </div><!-- .footer-bar -->
     </footer><!-- .site-footer -->
 
 <script type='text/javascript' src='/front/js/jquery.js'></script>
