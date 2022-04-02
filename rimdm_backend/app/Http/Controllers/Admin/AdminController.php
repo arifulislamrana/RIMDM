@@ -7,38 +7,28 @@ use Illuminate\Http\Request;
 
 class AdminController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function index()
     {
         $adminList = resolve('App\ViewModels\Admin\AdminListModel');
         $adminList->load();
-        // dd($adminList);
+
         return view('admin.admins.admin_list',['adminList'=>$adminList]);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function create()
     {
-        dd('creates function!');
+        $addAdminModel = resolve('App\ViewModels\Admin\AddAdminModel');
+        $addAdminModel->load();
+
+        return view('admin.admins.make_admin', ['teachers' => $addAdminModel->teachers]);
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(Request $request)
     {
-        //
+        $addAdminModel = resolve('App\ViewModels\Admin\AddAdminModel');
+        $addAdminModel->UpgradeToAdmin($request->id);
+
+        return redirect()->route('admins.index');
     }
 
     /**

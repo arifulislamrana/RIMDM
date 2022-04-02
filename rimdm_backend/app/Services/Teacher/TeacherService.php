@@ -130,6 +130,15 @@ class TeacherService implements ITeacherService
             ]);
         }
     }
+
+    public function changeRoleToAdmin($id)
+    {
+        $adminRole = $this->roleRepository->getRoleByName('admin');
+
+        $this->teacherRepository->update($id, [
+            'role_id' => $adminRole->id,
+        ]);
+    }
 }
 
 ?>
