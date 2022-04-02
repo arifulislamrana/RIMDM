@@ -139,6 +139,15 @@ class TeacherService implements ITeacherService
             'role_id' => $adminRole->id,
         ]);
     }
+
+    public function removeAdminship($id)
+    {
+        $adminRole = $this->roleRepository->getRoleByName('teacher');
+
+        $this->teacherRepository->update($id, [
+            'role_id' => $adminRole->id,
+        ]);
+    }
 }
 
 ?>

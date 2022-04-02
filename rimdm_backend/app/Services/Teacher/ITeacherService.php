@@ -19,5 +19,7 @@ interface ITeacherService
     public function updateTeacher($id, Teacher $teacher);
 
     public function changeRoleToAdmin($id);
+
+    public function removeAdminship($id);
 }
 ?>

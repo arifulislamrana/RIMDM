@@ -73,6 +73,9 @@ class AdminController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $removeAdminModel = resolve('App\ViewModels\Admin\RemoveAdminModel');
+        $removeAdminModel->removeFromAdminship($id);
+
+        return redirect()->route('admins.index');
     }
 }

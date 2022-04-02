@@ -102,7 +102,7 @@
                     <div id="applicantDeleteModal-{{$admin->id}}" class="modal modal-danger fade" tabindex="-1" role="dialog" aria-labelledby="custom-width-modalLabel" aria-hidden="true" style="display: none;">
                       <div class="modal-dialog" style="width:55%;">
                           <div class="modal-content">
-                              <form action="#" method="POST" class="remove-record-model">
+                              <form action="{{ Route('admins.destroy', ['admin' => $admin->id]) }}" method="POST" class="remove-record-model">
                                 @csrf
                                 {{ method_field('delete') }}
                                 <div class="modal-header">
