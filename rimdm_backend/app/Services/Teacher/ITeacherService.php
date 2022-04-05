@@ -21,5 +21,7 @@ interface ITeacherService
     public function changeRoleToAdmin($id);
 
     public function removeAdminship($id);
+
+    public function editAdminship($id, $roleId);
 }
 ?>

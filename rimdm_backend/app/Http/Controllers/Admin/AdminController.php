@@ -2,80 +2,133 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Http\Controllers\Controller;
+use Exception;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
 class AdminController extends Controller
 {
     public function index()
     {
-        $adminList = resolve('App\ViewModels\Admin\AdminListModel');
-        $adminList->load();
+        try
+        {
+            $adminList = resolve('App\ViewModels\Admin\AdminListModel');
+            $adminList->load();
 
-        return view('admin.admins.admin_list',['adminList'=>$adminList]);
+            return view('admin.admins.admin_list',['adminList'=>$adminList]);
+        }
+        catch (Exception $e)
+        {
+            $this->logger->write("error", "Failed to admin list", $e);
+
+            return redirect()->back()->withErrors(['invalid' => 'Temporary error occured. Please try later']);
+        }
     }
 
     public function create()
     {
-        $addAdminModel = resolve('App\ViewModels\Admin\AddAdminModel');
-        $addAdminModel->load();
+        try
+        {
+            $addAdminModel = resolve('App\ViewModels\Admin\AddAdminModel');
+            $addAdminModel->load();
 
-        return view('admin.admins.make_admin', ['teachers' => $addAdminModel->teachers]);
+            return view('admin.admins.make_admin', ['teachers' => $addAdminModel->teachers]);
+        }
+        catch (Exception $e)
+        {
+            $this->logger->write("error", "Failed to create admin form", $e);
+
+            return redirect()->back()->withErrors(['invalid' => 'Temporary error occured. Please try later']);
+        }
     }
 
     public function store(Request $request)
     {
-        $addAdminModel = resolve('App\ViewModels\Admin\AddAdminModel');
-        $addAdminModel->UpgradeToAdmin($request->id);
+        try
+        {
+            $addAdminModel = resolve('App\ViewModels\Admin\AddAdminModel');
+            $addAdminModel->UpgradeToAdmin($request->id);
 
-        return redirect()->route('admins.index');
+            return redirect()->route('admins.index');
+        }
+        catch (Exception $e)
+        {
+            $this->logger->write("error", "Failed to store admin data", $e);
+
+            return redirect()->back()->withErrors(['invalid' => 'Failed to store admin data. Please recheck input']);
+        }
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+
     public function show($id)
     {
-        //
+        try
+        {
+            return redirect()->route('teachers.show', ['teacher' => $id]);
+        }
+        catch (Exception $e)
+        {
+            $this->logger->write("error", "Failed to show admin data", $e);
+
+            return redirect()->back()->withErrors(['invalid' => 'Admin data could not be shown.']);
+        }
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+
     public function edit($id)
     {
-        //
+        try
+        {
+            $editAdminModel = resolve('App\ViewModels\Admin\EditAdminModel');
+            $editAdminModel->load($id);
+
+            return view('admin.admins.update_admin', ['editAdminModel' => $editAdminModel]);
+
+        }
+        catch (Exception $e)
+        {
+            $this->logger->write("error", "Failed to edit form for admin", $e);
+
+            return redirect()->back()->withErrors(['invalid' => 'Some temporary error occured. Please wait and try']);
+        }
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+
     public function update(Request $request, $id)
     {
-        //
+        try
+        {
+            $editAdminModel = resolve('App\ViewModels\Admin\EditAdminModel');
+            $editAdminModel->editAdminship($id, $request->role);
+
+            return redirect()->route('admins.index');
+
+        }
+        catch (Exception $e)
+        {
+            $this->logger->write("error", "Failed to update admin data", $e);
+
+            return redirect()->back()->withErrors(['invalid' => 'Failed to update admin data. Please recheck input']);
+        }
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+
     public function destroy($id)
     {
-        $removeAdminModel = resolve('App\ViewModels\Admin\RemoveAdminModel');
-        $removeAdminModel->removeFromAdminship($id);
+        try
+        {
+            $removeAdminModel = resolve('App\ViewModels\Admin\RemoveAdminModel');
+            $removeAdminModel->removeFromAdminship($id);
 
-        return redirect()->route('admins.index');
+            return redirect()->route('admins.index');
+        }
+        catch (Exception $e)
+        {
+            $this->logger->write("error", "Failed to remove", $e);
+
+            return redirect()->back()->withErrors(['invalid' => 'Failed to remove. Please recheck input']);
+        }
     }
 }
+
+

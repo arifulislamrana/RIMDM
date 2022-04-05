@@ -44,7 +44,7 @@ Route::prefix('/teacher')->group(function(){
 
 });
 
-Route::resource('/admins', AdminController::class);
+Route::resource('/admins', AdminController::class)->middleware('admin');
 
 Route::resource('/teachers', TeacherController::class)->middleware('admin');
 

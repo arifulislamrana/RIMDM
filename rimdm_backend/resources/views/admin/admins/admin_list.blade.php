@@ -90,9 +90,9 @@
                       <td>{{ $admin->role }}</td>
                       <td> <img src="{{$admin->img}}" alt="" style="border-radius: 50%; height: 50px; width: 65px"> </td>
                       <td style="text-align: center; display: flex">
-                        <button class="btn btn-info"><a href="#" style="font-style: none; color: white">Details</a></button>
+                        <button class="btn btn-info"><a href="{{ Route('admins.show', ['admin' => $admin->id]) }}" style="font-style: none; color: white">Details</a></button>
                         @if (Auth::guard('teacher')->user()->role->name == 'super admin')
-                        <button class="btn btn-primary"><a href="#" style="font-style: none; color: white">Update</a></button>
+                        <button class="btn btn-primary"><a href="{{ Route('admins.edit', ['admin' => $admin->id]) }}" style="font-style: none; color: white">Update</a></button>
                         @if (Auth::guard('teacher')->user()->id != $admin->id)
                         <button class="btn btn-danger" onclick="showModal({{$admin->id}})" data-userid="{{$admin->id}}">Remove</button>
                         @endif

@@ -148,6 +148,13 @@ class TeacherService implements ITeacherService
             'role_id' => $adminRole->id,
         ]);
     }
+
+    public function editAdminship($id, $roleId)
+    {
+        $this->teacherRepository->update($id, [
+            'role_id' => $roleId,
+        ]);
+    }
 }
 
 ?>
