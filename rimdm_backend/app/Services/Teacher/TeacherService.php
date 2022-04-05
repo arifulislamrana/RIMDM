@@ -130,6 +130,31 @@ class TeacherService implements ITeacherService
             ]);
         }
     }
+
+    public function changeRoleToAdmin($id)
+    {
+        $adminRole = $this->roleRepository->getRoleByName('admin');
+
+        $this->teacherRepository->update($id, [
+            'role_id' => $adminRole->id,
+        ]);
+    }
+
+    public function removeAdminship($id)
+    {
+        $adminRole = $this->roleRepository->getRoleByName('teacher');
+
+        $this->teacherRepository->update($id, [
+            'role_id' => $adminRole->id,
+        ]);
+    }
+
+    public function editAdminship($id, $roleId)
+    {
+        $this->teacherRepository->update($id, [
+            'role_id' => $roleId,
+        ]);
+    }
 }
 
 ?>

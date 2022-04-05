@@ -15,6 +15,13 @@ class TeacherRepository extends BaseRepository implements ITeacherRepository
     {
         return $this->model->where(['email' => $email])->first();
     }
+
+    public function getAdminTeachers()
+    {
+        $adminTeachers = $this->model->join('roles', 'teachers.role_id', '=', 'roles.id')->where('roles.name', 'admin')->get(['teachers.id', 'teachers.name','teachers.email','teachers.img','roles.name as role']);
+
+        return $adminTeachers;
+    }
 }
 
 ?>

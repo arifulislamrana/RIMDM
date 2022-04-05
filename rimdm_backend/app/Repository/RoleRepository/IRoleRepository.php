@@ -1,9 +1,13 @@
 <?php
 namespace App\Repository\RoleRepository;
 
-use App\Repository\BaseRepository\IBaseRepository;
+use app\Repository\BaseRepository\IBaseRepository;
 
 interface IRoleRepository extends IBaseRepository
 {
+    public function getAdmins();
+
+    public function getSuperAdmins();
+    
     public function getRoleByName($name);
 }

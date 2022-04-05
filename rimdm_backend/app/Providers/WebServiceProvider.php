@@ -50,8 +50,8 @@ class WebServiceProvider extends ServiceProvider
         $this->app->bind(IResultRepository::class, ResultRepository::class);
         $this->app->bind(ISubjectRepository::class, SubjectRepository::class);
         $this->app->bind(IResultService::class, ResultService::class);
-        $this->app->bind(IRoleService::class, RoleService::class);
         $this->app->bind(IRoleRepository::class, RoleRepository::class);
+        $this->app->bind(IRoleService::class, RoleService::class);
     }
 
     /**
