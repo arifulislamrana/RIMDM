@@ -20,4 +20,11 @@ class SubjectRepository extends BaseRepository implements ISubjectRepository
     {
         return $this->model->where(['teacher_id' => $teacher_id])->update(['teacher_id' => null]);
     }
+
+    public function getSubjectsOfSpecificClassWithTeachers($id)
+    {
+        $subjectsWithTeachers = $this->model->join('teachers', 'subjects.teacher_id', '=', 'teachers.id')->where(['subjects.class_level_id' => $id])->get(['subjects.id', 'subjects.name','teachers.name as teacherName','teachers.img','subjects.class_level_id']);
+
+        return $subjectsWithTeachers;
+    }
 }

@@ -8,4 +8,6 @@ interface ISubjectRepository extends IBaseRepository
     public function getSubjectsByClassId($classId);
 
     public function closeRealtionWithTeacher($teacher_id);
+
+    public function getSubjectsOfSpecificClassWithTeachers($id);
 }
