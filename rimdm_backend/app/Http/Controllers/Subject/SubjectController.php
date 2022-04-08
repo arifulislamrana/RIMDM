@@ -39,7 +39,18 @@ class SubjectController extends Controller
      */
     public function create()
     {
-        dd('hi');
+        try
+        {
+            $CreateSubjectModel = resolve('App\ViewModels\Subject\CreateSubjectModel');
+            $CreateSubjectModel->load();
+
+            return view('admin.subjects.create_subject', ['CreateSubjectModel' => $CreateSubjectModel]);
+        }
+        catch (Exception $e)
+        {
+            $this->logger->write("error", "Failed to show Subject create form", $e);
+            return response()->json(['error' => 'Failed to show Subject create form'], 409);
+        }
     }
 
     /**
@@ -47,7 +58,7 @@ class SubjectController extends Controller
      */
     public function store(Request $request)
     {
-        dd('hi');
+        dd($request);
     }
 
     /**

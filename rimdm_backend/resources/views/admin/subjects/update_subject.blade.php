@@ -1,6 +1,6 @@
 @extends('admin._index')
 
-@section('title','Subjects Table')
+@section('title','Subjects Update')
 
 @section('style')
 <link rel="stylesheet" href="../../back/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
@@ -16,12 +16,12 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>Subjects Tables</h1>
+            <h1>Subject Update</h1>
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="#">Home</a></li>
-              <li class="breadcrumb-item active">Subjects Table</li>
+              <li class="breadcrumb-item active">Subject Update</li>
             </ol>
           </div>
         </div>
