@@ -120,14 +120,14 @@ class SubjectController extends Controller
         try
         {
             $SubjectTableModel = resolve('App\ViewModels\Subject\SubjectListModel');
-            dd($id);
+            $subj = $SubjectTableModel->removeSubject($id);
 
-            return view('admin.subjects.subject_list', ['SubjectTableModel' => $SubjectTableModel]);
+            return redirect()->route('subjects.index', ['classId' => $subj->class_level_id]);
         }
         catch (Exception $e)
         {
-            $this->logger->write("error", "Failed to show subject List", $e);
-            return response()->json(['error' => 'Failed to show subject List'], 409);
+            $this->logger->write("error", "Failed to remove Subject", $e);
+            return response()->json(['error' => 'Failed to remove Subject'], 409);
         }
     }
 }

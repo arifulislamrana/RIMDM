@@ -10,5 +10,9 @@ interface ISubjectService
     public function saveNewSubject(Subject $subjectData);
 
     public function doesSubjectExist($name, $class);
+
+    public function getSubjectById($id);
+
+    public function removeSubject($id);
 }
 ?>

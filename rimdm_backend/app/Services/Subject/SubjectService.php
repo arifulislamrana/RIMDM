@@ -41,7 +41,16 @@ class SubjectService implements ISubjectService
         {
             return false;
         }
+    }
 
+    public function getSubjectById($id)
+    {
+        return $this->subjectRepository->find($id);
+    }
+
+    public function removeSubject($id)
+    {
+        return $this->subjectRepository->destroy($id);
     }
 }
 

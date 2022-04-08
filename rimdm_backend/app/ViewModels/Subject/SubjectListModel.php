@@ -40,4 +40,12 @@ class SubjectListModel
         $this->currentClass = $this->classService->getClassById($requestClassId);
         $this->subjectsOfSpecificClass = $this->subjectService->getSubjectsOfSpecificClass($requestClassId);
     }
+
+    public function removeSubject($subjectId)
+    {
+        $subj = $this->subjectService->getSubjectById($subjectId);
+        $this->subjectService->removeSubject($subjectId);
+
+        return $subj;
+    }
 }
