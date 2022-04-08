@@ -57,7 +57,7 @@
                 <div class="card-body row">
                     <div class="form-group col-md-6">
                         <label for="exampleInputName1">Subject Name</label>
-                        <input type="text" class="form-control" placeholder="Enter Teacher" name="name" value="{{old('name')}}" required>
+                        <input type="text" class="form-control" placeholder="Enter Subject Name" name="name" value="{{old('name')}}" required>
                     </div>
                     <div class="form-group col-md-6">
                         <label>Select Class</label>

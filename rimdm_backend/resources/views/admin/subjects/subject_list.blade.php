@@ -33,7 +33,7 @@
                 <select class="form-control select1" style="width: 100%;" name="classId" value="{{old('classId')}}"  onchange="submitForm()" required>
                   @foreach ($SubjectTableModel->classes as $classLevel)
                     @if ($classLevel->id == $SubjectTableModel->currentClass->id)
-                    <option value="{{$classLevel->id}}">{{ $classLevel->name }}</option>
+                    <option value="{{$classLevel->id}}" selected>{{ $classLevel->name }}</option>
                     @else
                     <option value="{{$classLevel->id}}">{{ $classLevel->name }}</option>
                     @endif

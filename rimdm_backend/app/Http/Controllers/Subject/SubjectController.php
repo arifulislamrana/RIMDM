@@ -6,6 +6,7 @@ use Exception;
 use App\Utility\ILogger;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Http\Requests\CreateSubject;
 
 class SubjectController extends Controller
 {
@@ -56,9 +57,24 @@ class SubjectController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(CreateSubject $request)
     {
-        dd($request);
+        try
+        {
+            $CreateSubjectModel = resolve('App\ViewModels\Subject\CreateSubjectModel');
+            if ($CreateSubjectModel->doesSubjectExist($request))
+            {
+                return redirect()->back()->withErrors(['invalid' => 'This Subject already Exists']);
+            }
+            $sub = $CreateSubjectModel->storeData($request);
+
+            return redirect()->route('subjects.index', ['classId' => $sub->class_level_id]);
+        }
+        catch (Exception $e)
+        {
+            $this->logger->write("error", "Failed to store subject data", $e);
+            return response()->json(['error' => 'Failed to store subject data'], 409);
+        }
     }
 
     /**

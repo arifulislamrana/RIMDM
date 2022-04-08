@@ -27,4 +27,9 @@ class SubjectRepository extends BaseRepository implements ISubjectRepository
 
         return $subjectsWithTeachers;
     }
+
+    public function doesExist($name, $class)
+    {
+        return $this->model->where(['name' => $name, 'class_level_id' => $class])->first();
+    }
 }
