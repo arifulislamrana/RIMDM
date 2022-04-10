@@ -235,6 +235,29 @@
               </li>
             </ul>
           </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-table"></i>
+              <p>
+                Subjects
+                <i class="fas fa-angle-left right"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="{{ Route('subjects.create') }}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Add Subject</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{ Route('subjects.index') }}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Subjects List</p>
+                </a>
+              </li>
+            </ul>
+          </li>
           @endif
           @if (Auth::guard('teacher')->user()->role->name == 'super admin')
           <li class="nav-item">

@@ -29,6 +29,8 @@ use App\Services\Result\IResultService;
 use App\Services\Result\ResultService;
 use App\Services\Role\IRoleService;
 use App\Services\Role\RoleService;
+use App\Services\Subject\ISubjectService;
+use App\Services\Subject\SubjectService;
 
 class WebServiceProvider extends ServiceProvider
 {
@@ -52,6 +54,7 @@ class WebServiceProvider extends ServiceProvider
         $this->app->bind(IResultService::class, ResultService::class);
         $this->app->bind(IRoleRepository::class, RoleRepository::class);
         $this->app->bind(IRoleService::class, RoleService::class);
+        $this->app->bind(ISubjectService::class, SubjectService::class);
     }
 
     /**
