@@ -52,6 +52,15 @@ class SubjectService implements ISubjectService
     {
         return $this->subjectRepository->destroy($id);
     }
+
+    public function updateSubject(Subject $subjectData, $id)
+    {
+        return $this->subjectRepository->update($id, [
+            'name' => $subjectData->name,
+            'class_level_id' => $subjectData->class,
+            'teacher_id' => $subjectData->teacher,
+        ]);
+    }
 }
 
 ?>

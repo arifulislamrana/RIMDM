@@ -82,7 +82,7 @@ class SubjectController extends Controller
      */
     public function show($id)
     {
-        dd('hi');
+        dd('why man why??!! Go back.');
     }
 
     /**
@@ -92,24 +92,36 @@ class SubjectController extends Controller
     {
         try
         {
-            $SubjectTableModel = resolve('App\ViewModels\Subject\SubjectListModel');
-            dd($id);
+            $SubjectUpdateModel = resolve('App\ViewModels\Subject\SubjectUpdateModel');
+            $SubjectUpdateModel->load($id);
 
-            return view('admin.subjects.subject_list', ['SubjectTableModel' => $SubjectTableModel]);
+            return view('admin.subjects.update_subject', ['SubjectUpdateModel' => $SubjectUpdateModel]);
         }
         catch (Exception $e)
         {
-            $this->logger->write("error", "Failed to show subject List", $e);
-            return response()->json(['error' => 'Failed to show subject List'], 409);
+            $this->logger->write("error", "Failed to show subject edit form", $e);
+            return response()->json(['error' => 'Failed to show subject edit form'], 409);
         }
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, $id)
+    public function update(CreateSubject $request, $id)
     {
-        dd('hi');
+        try
+        {
+            $SubjectUpdateModel = resolve('App\ViewModels\Subject\SubjectUpdateModel');
+
+            $sub = $SubjectUpdateModel->updateData($request, $id);
+
+            return redirect()->route('subjects.index', ['classId' => $sub->class_level_id]);
+        }
+        catch (Exception $e)
+        {
+            $this->logger->write("error", "Failed to update subject data", $e);
+            return response()->json(['error' => 'Failed to update subject data'], 409);
+        }
     }
 
     /**

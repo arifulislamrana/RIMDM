@@ -14,5 +14,7 @@ interface ISubjectService
     public function getSubjectById($id);
 
     public function removeSubject($id);
+
+    public function updateSubject(Subject $subjectData, $id);
 }
 ?>
