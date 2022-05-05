@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\AdminController;
+use App\Http\Controllers\Result\ResultController;
 use App\Http\Controllers\Student\StudentController;
 use App\Http\Controllers\Subject\SubjectController;
 use App\Http\Controllers\Teacher\AuthenticationController;
@@ -50,3 +51,5 @@ Route::resource('/admins', AdminController::class)->middleware('admin');
 Route::resource('/teachers', TeacherController::class)->middleware('admin');
 
 Route::resource('/subjects', SubjectController::class)->middleware('admin');
+
+Route::resource('/results', ResultController::class);
