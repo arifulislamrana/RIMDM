@@ -78,10 +78,10 @@
                                 <ul class="flex flex-column flex-lg-row justify-content-lg-end align-content-center">
                                     <li class="current-menu-item"><a href="{{ Route('index') }}">Home</a></li>
                                     <li><a href="{{ Route('about') }}">About</a></li>
-                                    <li><a href="#">Classes</a></li>
-                                    <li><a href="#">Teachers</a></li>
-                                    <li><a href="#">Notice</a></li>
-                                    <li><a href="#">Contact</a></li>
+                                    <li><a href="{{ Route('classes') }}">Classes</a></li>
+                                    <li><a href="{{ Route('teachers') }}">Teachers</a></li>
+                                    <li><a href="{{ Route('notice') }}">Notice</a></li>
+                                    <li><a href="{{ Route('contact') }}">Contact</a></li>
                                 </ul>
 
                                 <div class="hamburger-menu d-lg-none">

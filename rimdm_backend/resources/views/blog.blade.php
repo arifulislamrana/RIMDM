@@ -34,7 +34,7 @@
                 <div class="col-12 col-md-6 px-25">
                     <div class="blog-post-content">
                         <figure class="blog-post-thumbnail position-relative m-0">
-                            <a href="#"><img src="images/b-1.jpg" alt=""></a>
+                            <a href="#"><img src="/front/images/b-1.jpg" alt=""></a>
 
                             <div class="posted-date position-absolute">
                                 <div class="day">23</div>
@@ -63,7 +63,7 @@
                 <div class="col-12 col-md-6 px-25">
                     <div class="blog-post-content">
                         <figure class="blog-post-thumbnail position-relative m-0">
-                            <a href="#"><img src="images/b-2.jpg" alt=""></a>
+                            <a href="#"><img src="/front/images/b-2.jpg" alt=""></a>
 
                             <div class="posted-date position-absolute">
                                 <div class="day">23</div>
@@ -92,7 +92,7 @@
                 <div class="col-12 col-md-6 px-25">
                     <div class="blog-post-content">
                         <figure class="blog-post-thumbnail position-relative m-0">
-                            <a href="#"><img src="images/b-3.jpg" alt=""></a>
+                            <a href="#"><img src="/front/images/b-3.jpg" alt=""></a>
 
                             <div class="posted-date position-absolute">
                                 <div class="day">23</div>
@@ -121,7 +121,7 @@
                 <div class="col-12 col-md-6 px-25">
                     <div class="blog-post-content">
                         <figure class="blog-post-thumbnail position-relative m-0">
-                            <a href="#"><img src="images/b-4.jpg" alt=""></a>
+                            <a href="#"><img src="/front/images/b-4.jpg" alt=""></a>
 
                             <div class="posted-date position-absolute">
                                 <div class="day">23</div>
@@ -150,7 +150,7 @@
                 <div class="col-12 col-md-6 px-25">
                     <div class="blog-post-content">
                         <figure class="blog-post-thumbnail position-relative m-0">
-                            <a href="#"><img src="images/b-5.jpg" alt=""></a>
+                            <a href="#"><img src="/front/images/b-5.jpg" alt=""></a>
 
                             <div class="posted-date position-absolute">
                                 <div class="day">23</div>
@@ -179,7 +179,7 @@
                 <div class="col-12 col-md-6 px-25">
                     <div class="blog-post-content">
                         <figure class="blog-post-thumbnail position-relative m-0">
-                            <a href="#"><img src="images/b-6.jpg" alt=""></a>
+                            <a href="#"><img src="/front/images/b-6.jpg" alt=""></a>
 
                             <div class="posted-date position-absolute">
                                 <div class="day">23</div>
@@ -261,7 +261,7 @@
 
                 <ul class="p-0 m-0">
                     <li class="flex flex-wrap justify-content-between align-items-start">
-                        <img src="images/t-1.jpg" alt="">
+                        <img src="/front/images/t-1.jpg" alt="">
 
                         <div class="content-wrap">
                             <h3><a href="#">The Complete Financial Analyst Training</a></h3>
@@ -271,7 +271,7 @@
                     </li>
 
                     <li class="flex flex-wrap justify-content-between align-items-start">
-                        <img src="images/t-2.jpg" alt="">
+                        <img src="/front/images/t-2.jpg" alt="">
 
                         <div class="content-wrap">
                             <h3><a href="#">Complete Java
@@ -282,7 +282,7 @@
                     </li>
 
                     <li class="flex flex-wrap justify-content-between align-items-start">
-                        <img src="images/t-3.jpg" alt="">
+                        <img src="/front/images/t-3.jpg" alt="">
 
                         <div class="content-wrap">
                             <h3><a href="#">The Complete Digital Marketing Course</a></h3>
@@ -292,7 +292,7 @@
                     </li>
 
                     <li class="flex flex-wrap justify-content-between align-items-start">
-                        <img src="images/t-4.jpg" alt="">
+                        <img src="/front/images/t-4.jpg" alt="">
 
                         <div class="content-wrap">
                             <h3><a href="#">Photoshop CC 2018
@@ -305,7 +305,7 @@
             </div><!-- .latest-courses -->
 
             <div class="ads">
-                <img src="images/ads.jpg" alt="">
+                <img src="/front/images/ads.jpg" alt="">
             </div><!-- .ads -->
 
             <div class="popular-tags">

@@ -2,11 +2,16 @@
 
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\Admin\AdminController;
+use App\Http\Controllers\BlogController;
+use App\Http\Controllers\ClassController;
+use App\Http\Controllers\ContactController;
+use App\Http\Controllers\NoticeController;
 use App\Http\Controllers\Student\StudentController;
 use App\Http\Controllers\Subject\SubjectController;
 use App\Http\Controllers\Teacher\AuthenticationController;
 use App\Http\Controllers\Teacher\DashBoardController;
 use App\Http\Controllers\Teacher\TeacherController;
+use App\Http\Controllers\TeachersController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -53,3 +58,13 @@ Route::resource('/teachers', TeacherController::class)->middleware('admin');
 Route::resource('/subjects', SubjectController::class)->middleware('admin');
 
 Route::get('/about', [AboutController::class, 'index'])->name('about');
+
+Route::get('/contact', [ContactController::class, 'index'])->name('contact');
+
+Route::get('/teachers', [TeachersController::class, 'index'])->name('teachers');
+
+Route::get('/blog', [BlogController::class, 'index'])->name('blog');
+
+Route::get('/notice', [NoticeController::class, 'index'])->name('notice');
+
+Route::get('/classes', [ClassController::class, 'index'])->name('classes');

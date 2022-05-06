@@ -2,271 +2,327 @@
 @section('title','Notice')
 
 @section('content')
-    <div class="page-header-overlay">
-            <div class="container">
-                <div class="row">
-                    <div class="col-12">
-                        <header class="entry-header">
-                            <h1 style="color: rgb(67, 255, 67)">ABOUT</h1>
-                        </header><!-- .entry-header -->
-                    </div><!-- .col -->
-                </div><!-- .row -->
-            </div><!-- .container -->
-        </div><!-- .page-header-overlay -->
-    </div><!-- .page-header -->
-
+<div class="page-header-overlay">
     <div class="container">
         <div class="row">
             <div class="col-12">
-                <div class="breadcrumbs">
-                    <ul class="flex flex-wrap align-items-center p-0 m-0">
-                        <li><a href="#"><i class="fa fa-home"></i> Home</a></li>
-                        <li>About</li>
-                    </ul>
-                </div><!-- .breadcrumbs -->
-            </div><!-- .col -->
-        </div><!-- .row -->
-
-        <div class="row">
-            <div class="col-12">
-                <div class="about-heading">
-                    <h2 class="entry-title">Welcome to Ezuca</h2>
-
-                    <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit.</p>
-                </div><!-- .about-heading -->
-            </div><!-- .col -->
-
-            <div class="col-12 col-lg-6">
-                <div class="about-stories">
-                    <h3>Our Stories</h3>
-
-                    <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium.</p>
-
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque quis eros lobortis, vestibulum turpis ac, pulvinar odio. </p>
-
-                    <ul class="p-0 m-0 green-ticked">
-                        <li>Learning program with after-school</li>
-                        <li>Positive learning environment</li>
-                        <li>Learning through play</li>
-                    </ul><!-- .green-ticked -->
-                </div><!-- .about-stories -->
-            </div><!-- .col -->
-
-            <div class="col-12 col-lg-6">
-                <div class="about-values">
-                    <h3>Our Stories</h3>
-
-                    <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium.</p>
-
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque quis eros lobortis, vestibulum turpis ac, pulvinar odio. </p>
-
-                    <ul class="p-0 m-0 green-ticked">
-                        <li>Learning program with after-school</li>
-                        <li>Positive learning environment</li>
-                        <li>Learning through play</li>
-                    </ul><!-- .green-ticked -->
-                </div><!-- .about-values -->
+                <header class="entry-header">
+                    <h1>BLOG GRID</h1>
+                </header><!-- .entry-header -->
             </div><!-- .col -->
         </div><!-- .row -->
     </div><!-- .container -->
+</div><!-- .page-header-overlay -->
+</div><!-- .page-header -->
 
-    <section class="about-section">
-        <div class="container">
-            <div class="row">
-                <div class="col-12 col-lg-6 align-content-lg-stretch">
-                    <header class="heading">
-                        <h2 class="entry-title">About Ezuca</h2>
+<div class="container">
+<div class="row">
+    <div class="col-12">
+        <div class="breadcrumbs">
+            <ul class="flex flex-wrap align-items-center p-0 m-0">
+                <li><a href="#"><i class="fa fa-home"></i> Home</a></li>
+                <li>Blog Grid</li>
+            </ul>
+        </div><!-- .breadcrumbs -->
+    </div><!-- .col -->
+</div><!-- .row -->
 
-                        <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium.</p>
-                    </header><!-- .heading -->
+<div class="row">
+    <div class="col-12 col-lg-8">
+        <div class="blog-posts">
+            <div class="row mx-m-25">
+                <div class="col-12 col-md-6 px-25">
+                    <div class="blog-post-content">
+                        <figure class="blog-post-thumbnail position-relative m-0">
+                            <a href="#"><img src="/front/images/b-1.jpg" alt=""></a>
 
-                    <div class="entry-content ezuca-stats">
-                        <div class="stats-wrap flex flex-wrap justify-content-lg-between">
-                            <div class="stats-count">
-                                50<span>M+</span>
-                                <p>STUDENTS LEARNING</p>
-                            </div><!-- .stats-count -->
+                            <div class="posted-date position-absolute">
+                                <div class="day">23</div>
+                                <div class="month">mar</div>
+                            </div>
+                        </figure><!-- .blog-post-thumbnail -->
 
-                            <div class="stats-count">
-                                30<span>K+</span>
-                                <p>ACTIVE COURSES</p>
-                            </div><!-- .stats-count -->
+                        <div class="blog-post-content-wrap">
+                            <header class="entry-header">
+                                <h2 class="entry-title"><a href="#">Which investment project should my company choose?</a></h2>
 
-                            <div class="stats-count">
-                                340<span>M+</span>
-                                <p>INSTRUCTORS ONLINE</p>
-                            </div><!-- .stats-count -->
+                                <div class="entry-meta flex align-items-center">
+                                    <div class="post-author"><a href="#">Ms. Lara Croft </a></div>
 
-                            <div class="stats-count">
-                                20<span>+</span>
-                                <p>Country Reached</p>
-                            </div><!-- .stats-count -->
-                        </div><!-- .stats-wrap -->
-                    </div><!-- .ezuca-stats -->
+                                    <div class="post-comments"><a href="#">02 Comments</a></div>
+                                </div><!-- .entry-meta -->
+                            </header><!-- .entry-header -->
+
+                            <div class="entry-content">
+                                <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt.</p>
+                            </div><!-- .entry-content -->
+                        </div><!-- .blog-post-content-wrap -->
+                    </div><!-- .blog-post-content -->
                 </div><!-- .col -->
 
-                <div class="col-12 col-lg-6 flex align-content-center mt-5 mt-lg-0">
-                    <div class="ezuca-video position-relative">
-                        <div class="video-play-btn position-absolute">
-                            <img src="/front/images/video-icon.png" alt="Video Play">
-                        </div><!-- .video-play-btn -->
+                <div class="col-12 col-md-6 px-25">
+                    <div class="blog-post-content">
+                        <figure class="blog-post-thumbnail position-relative m-0">
+                            <a href="#"><img src="/front/images/b-2.jpg" alt=""></a>
 
-                        <img src="/front/images/video-screenshot.png" alt="">
-                    </div><!-- .ezuca-video -->
+                            <div class="posted-date position-absolute">
+                                <div class="day">23</div>
+                                <div class="month">mar</div>
+                            </div>
+                        </figure><!-- .blog-post-thumbnail -->
+
+                        <div class="blog-post-content-wrap">
+                            <header class="entry-header">
+                                <h2 class="entry-title"><a href="#">Which investment project should my company choose?</a></h2>
+
+                                <div class="entry-meta flex align-items-center">
+                                    <div class="post-author"><a href="#">Ms. Lara Croft </a></div>
+
+                                    <div class="post-comments"><a href="#">02 Comments</a></div>
+                                </div><!-- .entry-meta -->
+                            </header><!-- .entry-header -->
+
+                            <div class="entry-content">
+                                <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt.</p>
+                            </div><!-- .entry-content -->
+                        </div><!-- .blog-post-content-wrap -->
+                    </div><!-- .blog-post-content -->
                 </div><!-- .col -->
-            </div><!-- .row -->
-        </div><!-- .container -->
-    </section><!-- .about-section -->
 
-    <section class="testimonial-section">
-        <!-- Swiper -->
-        <div class="swiper-container testimonial-slider">
-            <div class="swiper-wrapper">
-                <div class="swiper-slide">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-12 col-lg-6 order-2 order-lg-1 flex align-items-center mt-5 mt-lg-0">
-                                <figure class="user-avatar">
-                                    <img src="/front/images/user-1.jpg" alt="">
-                                </figure><!-- .user-avatar -->
-                            </div><!-- .col -->
+                <div class="col-12 col-md-6 px-25">
+                    <div class="blog-post-content">
+                        <figure class="blog-post-thumbnail position-relative m-0">
+                            <a href="#"><img src="/front/images/b-3.jpg" alt=""></a>
 
-                            <div class="col-12 col-lg-6 order-1 order-lg-2 content-wrap h-100">
-                                <div class="entry-content">
-                                    <p>Together as teachers, students and universities we can help make this education available for everyone.</p>
-                                </div><!-- .entry-content -->
+                            <div class="posted-date position-absolute">
+                                <div class="day">23</div>
+                                <div class="month">mar</div>
+                            </div>
+                        </figure><!-- .blog-post-thumbnail -->
 
-                                <div class="entry-footer">
-                                    <h3 class="testimonial-user">Russell Stephens - <span>University in UK</span></h3>
-                                </div><!-- .entry-footer -->
-                            </div><!-- .col -->
-                        </div><!-- .row -->
-                    </div><!-- .container -->
-                </div><!-- .swiper-slide -->
+                        <div class="blog-post-content-wrap">
+                            <header class="entry-header">
+                                <h2 class="entry-title"><a href="#">Which investment project should my company choose?</a></h2>
 
-                <div class="swiper-slide">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-12 col-lg-6 order-2 order-lg-1 flex align-items-center mt-5 mt-lg-0">
-                                <figure class="user-avatar">
-                                    <img src="/front/images/user-2.jpg" alt="">
-                                </figure><!-- .user-avatar -->
-                            </div><!-- .col -->
+                                <div class="entry-meta flex align-items-center">
+                                    <div class="post-author"><a href="#">Ms. Lara Croft </a></div>
 
-                            <div class="col-12 col-lg-6 order-1 order-lg-2 content-wrap h-100">
-                                <div class="entry-content">
-                                    <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                                </div><!-- .entry-content -->
+                                    <div class="post-comments"><a href="#">02 Comments</a></div>
+                                </div><!-- .entry-meta -->
+                            </header><!-- .entry-header -->
 
-                                <div class="entry-footer">
-                                    <h3 class="testimonial-user">Robert Stephens - <span>University in Oxford</span></h3>
-                                </div><!-- .entry-footer -->
-                            </div><!-- .col -->
-                        </div><!-- .row -->
-                    </div><!-- .container -->
-                </div><!-- .swiper-slide -->
+                            <div class="entry-content">
+                                <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt.</p>
+                            </div><!-- .entry-content -->
+                        </div><!-- .blog-post-content-wrap -->
+                    </div><!-- .blog-post-content -->
+                </div><!-- .col -->
 
-                <div class="swiper-slide">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-12 col-lg-6 flex order-2 order-lg-1 align-items-center mt-5 mt-lg-0">
-                                <figure class="user-avatar">
-                                    <img src="/front/images/user-3.jpg" alt="">
-                                </figure><!-- .user-avatar -->
-                            </div><!-- .col -->
+                <div class="col-12 col-md-6 px-25">
+                    <div class="blog-post-content">
+                        <figure class="blog-post-thumbnail position-relative m-0">
+                            <a href="#"><img src="/front/images/b-4.jpg" alt=""></a>
 
-                            <div class="col-12 col-lg-6 order-1 order-lg-2 content-wrap h-100">
-                                <div class="entry-content">
-                                    <p>Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour.</p>
-                                </div><!-- .entry-content -->
+                            <div class="posted-date position-absolute">
+                                <div class="day">23</div>
+                                <div class="month">mar</div>
+                            </div>
+                        </figure><!-- .blog-post-thumbnail -->
 
-                                <div class="entry-footer">
-                                    <h3 class="testimonial-user">James Stephens - <span>University in Cambridge</span></h3>
-                                </div><!-- .entry-footer -->
-                            </div><!-- .col -->
-                        </div><!-- .row -->
-                    </div><!-- .container -->
-                </div><!-- .swiper-slide -->
-            </div><!-- .swiper-wrapper -->
+                        <div class="blog-post-content-wrap">
+                            <header class="entry-header">
+                                <h2 class="entry-title"><a href="#">Which investment project should my company choose?</a></h2>
 
-            <div class="container">
-                <div class="row">
-                    <div class="col-12 col-lg-6 mt-5 mt-lg-0">
-                        <div class="swiper-pagination position-relative flex justify-content-center align-items-center"></div>
-                    </div><!-- .col -->
-                </div><!-- .row -->
-            </div><!-- .container -->
-        </div><!-- .testimonial-slider -->
-    </section><!-- .testimonial-section -->
+                                <div class="entry-meta flex align-items-center">
+                                    <div class="post-author"><a href="#">Ms. Lara Croft </a></div>
 
-    <div class="container">
-        <div class="row">
-            <div class="col-12">
-                <div class="team-heading">
-                    <h2 class="entry-title">Meet Our Team</h2>
-                    <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit.</p>
-                </div><!-- .team-heading -->
-            </div><!-- .col -->
+                                    <div class="post-comments"><a href="#">02 Comments</a></div>
+                                </div><!-- .entry-meta -->
+                            </header><!-- .entry-header -->
 
-            <div class="col-12 col-md-6 col-lg-3">
-                <div class="team-member">
-                    <img src="/front/images/team-1.jpg" alt="">
+                            <div class="entry-content">
+                                <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt.</p>
+                            </div><!-- .entry-content -->
+                        </div><!-- .blog-post-content-wrap -->
+                    </div><!-- .blog-post-content -->
+                </div><!-- .col -->
 
-                    <h3>Mr. John Wick</h3>
-                    <h4>Materials</h4>
+                <div class="col-12 col-md-6 px-25">
+                    <div class="blog-post-content">
+                        <figure class="blog-post-thumbnail position-relative m-0">
+                            <a href="#"><img src="/front/images/b-5.jpg" alt=""></a>
 
-                    <ul class="p-0 m-0 d-flex justify-content-center align-items-center">
-                        <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                        <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-                        <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                    </ul>
-                </div><!-- .team-member -->
-            </div><!-- .col -->
+                            <div class="posted-date position-absolute">
+                                <div class="day">23</div>
+                                <div class="month">mar</div>
+                            </div>
+                        </figure><!-- .blog-post-thumbnail -->
 
-            <div class="col-12 col-md-6 col-lg-3">
-                <div class="team-member">
-                    <img src="/front/images/team-2.jpg" alt="">
+                        <div class="blog-post-content-wrap">
+                            <header class="entry-header">
+                                <h2 class="entry-title"><a href="#">Which investment project should my company choose?</a></h2>
 
-                    <h3>Michelle Golden</h3>
-                    <h4>WordPress</h4>
+                                <div class="entry-meta flex align-items-center">
+                                    <div class="post-author"><a href="#">Ms. Lara Croft </a></div>
 
-                    <ul class="p-0 m-0 d-flex justify-content-center align-items-center">
-                        <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                        <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-                        <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                    </ul>
-                </div><!-- .team-member -->
-            </div><!-- .col -->
+                                    <div class="post-comments"><a href="#">02 Comments</a></div>
+                                </div><!-- .entry-meta -->
+                            </header><!-- .entry-header -->
 
-            <div class="col-12 col-md-6 col-lg-3">
-                <div class="team-member">
-                    <img src="/front/images/team-3.jpg" alt="">
+                            <div class="entry-content">
+                                <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt.</p>
+                            </div><!-- .entry-content -->
+                        </div><!-- .blog-post-content-wrap -->
+                    </div><!-- .blog-post-content -->
+                </div><!-- .col -->
 
-                    <h3>Ms. Lucius</h3>
-                    <h4>Data Analysis</h4>
+                <div class="col-12 col-md-6 px-25">
+                    <div class="blog-post-content">
+                        <figure class="blog-post-thumbnail position-relative m-0">
+                            <a href="#"><img src="/front/images/b-6.jpg" alt=""></a>
 
-                    <ul class="p-0 m-0 d-flex justify-content-center align-items-center">
-                        <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                        <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-                        <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                    </ul>
-                </div><!-- .team-member -->
-            </div><!-- .col -->
+                            <div class="posted-date position-absolute">
+                                <div class="day">23</div>
+                                <div class="month">mar</div>
+                            </div>
+                        </figure><!-- .blog-post-thumbnail -->
 
-            <div class="col-12 col-md-6 col-lg-3">
-                <div class="team-member">
-                    <img src="/front/images/team-4.jpg" alt="">
+                        <div class="blog-post-content-wrap">
+                            <header class="entry-header">
+                                <h2 class="entry-title"><a href="#">Which investment project should my company choose?</a></h2>
 
-                    <h3>Ms. Lara Croft </h3>
-                    <h4>HTML CSS</h4>
+                                <div class="entry-meta flex align-items-center">
+                                    <div class="post-author"><a href="#">Ms. Lara Croft </a></div>
 
-                    <ul class="p-0 m-0 d-flex justify-content-center align-items-center">
-                        <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                        <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-                        <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                    </ul>
-                </div><!-- .team-member -->
-            </div><!-- .col -->
-        </div><!-- .row -->
-    </div><!-- .container -->
+                                    <div class="post-comments"><a href="#">02 Comments</a></div>
+                                </div><!-- .entry-meta -->
+                            </header><!-- .entry-header -->
+
+                            <div class="entry-content">
+                                <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt.</p>
+                            </div><!-- .entry-content -->
+                        </div><!-- .blog-post-content-wrap -->
+                    </div><!-- .blog-post-content -->
+                </div><!-- .col -->
+            </div><!-- .blog-posts -->
+        </div><!-- .col -->
+
+        <div class="pagination flex flex-wrap justify-content-between align-items-center">
+            <div class="col-12 col-lg-4 order-2 order-lg-1 mt-3 mt-lg-0">
+                <ul class="flex flex-wrap align-items-center order-2 order-lg-1 p-0 m-0">
+                    <li class="active"><a href="#">1</a></li>
+                    <li><a href="#">2</a></li>
+                    <li><a href="#">3</a></li>
+                    <li><a href="#"><i class="fa fa-angle-right"></i></a></li>
+                </ul>
+            </div>
+
+            <div class="col-12 flex justify-content-start justify-content-lg-end col-lg-8 order-1 order-lg-2">
+                <div class="pagination-results flex flex-wrap align-items-center">
+                    <p class="m-0">Showing 1–3 of 12 results</p>
+
+                    <form>
+                        <select>
+                            <option>Show: 06</option>
+                            <option>Show: 12</option>
+                            <option>Show: 18</option>
+                            <option>Show: 24</option>
+                        </select>
+                    </form>
+                </div><!-- .pagination-results -->
+            </div>
+        </div><!-- .pagination -->
+    </div><!-- .col -->
+
+    <div class="col-12 col-lg-4">
+        <div class="sidebar">
+            <div class="search-widget">
+                <form class="flex flex-wrap align-items-center">
+                    <input type="search" placeholder="Search...">
+                    <button type="submit" class="flex justify-content-center align-items-center"><i class="fa fa-search"></i></button>
+                </form><!-- .flex -->
+            </div><!-- .search-widget -->
+
+            <div class="cat-links">
+                <h2>Categories</h2>
+
+                <ul class="p-0 m-0">
+                    <li><a href="#">Business</a></li>
+                    <li><a href="#">Design</a></li>
+                    <li><a href="#">Marketing</a></li>
+                    <li><a href="#">MBA Courses</a></li>
+                    <li><a href="#">Technology</a></li>
+                    <li><a href="#">Web Development</a></li>
+                </ul>
+            </div><!-- .cat-links -->
+
+            <div class="latest-courses">
+                <h2>Latest Courses</h2>
+
+                <ul class="p-0 m-0">
+                    <li class="flex flex-wrap justify-content-between align-items-start">
+                        <img src="/front/images/t-1.jpg" alt="">
+
+                        <div class="content-wrap">
+                            <h3><a href="#">The Complete Financial Analyst Training</a></h3>
+
+                            <div class="course-cost free-cost">Free</div>
+                        </div><!-- .content-wrap -->
+                    </li>
+
+                    <li class="flex flex-wrap justify-content-between align-items-start">
+                        <img src="/front/images/t-2.jpg" alt="">
+
+                        <div class="content-wrap">
+                            <h3><a href="#">Complete Java
+                                Masterclass</a></h3>
+
+                            <div class="course-cost free-cost">Free</div>
+                        </div><!-- .content-wrap -->
+                    </li>
+
+                    <li class="flex flex-wrap justify-content-between align-items-start">
+                        <img src="/front/images/t-3.jpg" alt="">
+
+                        <div class="content-wrap">
+                            <h3><a href="#">The Complete Digital Marketing Course</a></h3>
+
+                            <div class="course-cost">$24</div>
+                        </div><!-- .content-wrap -->
+                    </li>
+
+                    <li class="flex flex-wrap justify-content-between align-items-start">
+                        <img src="/front/images/t-4.jpg" alt="">
+
+                        <div class="content-wrap">
+                            <h3><a href="#">Photoshop CC 2018
+                                MasterClass</a></h3>
+
+                            <div class="course-cost">$18</div>
+                        </div><!-- .content-wrap -->
+                    </li>
+                </ul>
+            </div><!-- .latest-courses -->
+
+            <div class="ads">
+                <img src="/front/images/ads.jpg" alt="">
+            </div><!-- .ads -->
+
+            <div class="popular-tags">
+                <h2>Popular Tags</h2>
+
+                <ul class="flex flex-wrap align-items-center p-0 m-0">
+                    <li><a href="#">Creative</a></li>
+                    <li><a href="#">Unique</a></li>
+                    <li><a href="#">Photography</a></li>
+                    <li><a href="#">ideas</a></li>
+                    <li><a href="#">Wordpress Template</a></li>
+                    <li><a href="#">startup</a></li>
+                </ul>
+            </div><!-- .popular-tags -->
+        </div><!-- .sidebar -->
+    </div><!-- .col -->
+</div><!-- .row -->
+</div><!-- .container -->
+
 @endsection
