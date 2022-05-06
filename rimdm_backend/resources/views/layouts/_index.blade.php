@@ -76,8 +76,8 @@
                         <div class="col-3 col-lg-9 flex justify-content-end align-content-center">
                             <nav class="site-navigation flex justify-content-end align-items-center">
                                 <ul class="flex flex-column flex-lg-row justify-content-lg-end align-content-center">
-                                    <li class="current-menu-item"><a href="index.html">Home</a></li>
-                                    <li><a href="#">About</a></li>
+                                    <li class="current-menu-item"><a href="{{ Route('index') }}">Home</a></li>
+                                    <li><a href="{{ Route('about') }}">About</a></li>
                                     <li><a href="#">Classes</a></li>
                                     <li><a href="#">Teachers</a></li>
                                     <li><a href="#">Notice</a></li>
@@ -102,7 +102,7 @@
         </header><!-- .site-header -->
 
     @yield('content')
-
+<hr>
     <footer class="site-footer">
         <div class="footer-widgets">
             <div class="container">

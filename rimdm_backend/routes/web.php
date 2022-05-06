@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AboutController;
 use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Student\StudentController;
 use App\Http\Controllers\Subject\SubjectController;
@@ -50,3 +51,5 @@ Route::resource('/admins', AdminController::class)->middleware('admin');
 Route::resource('/teachers', TeacherController::class)->middleware('admin');
 
 Route::resource('/subjects', SubjectController::class)->middleware('admin');
+
+Route::get('/about', [AboutController::class, 'index'])->name('about');
