@@ -19,7 +19,7 @@ class NoticeController extends Controller
 
     public function index()
     {
-        //
+        dd('Khali');
     }
 
     public function create()
@@ -46,7 +46,14 @@ class NoticeController extends Controller
     {
         try
         {
-            dd($request->getObject());
+            $createNoticeModel = resolve('App\ViewModels\Notice\CreateNoticeModel');
+
+            if ($createNoticeModel->storeNoticeData($request->getObject()))
+            {
+                return redirect()->route('notices.index');
+            }
+
+            return redirect()->back()->withErrors(['invalid' => 'data could not be saved. Please try again']);
         }
         catch (Exception $e)
         {
