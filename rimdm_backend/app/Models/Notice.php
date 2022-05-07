@@ -14,7 +14,6 @@ class Notice extends Model
         'name',
         'heading',
         'body',
-        'img',
         'file',
     ];
 }

@@ -258,6 +258,29 @@
               </li>
             </ul>
           </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-table"></i>
+              <p>
+                Notices
+                <i class="fas fa-angle-left right"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="{{ Route('notices.create') }}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Create Notice</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{ Route('notices.index') }}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Notice List</p>
+                </a>
+              </li>
+            </ul>
+          </li>
           @endif
           @if (Auth::guard('teacher')->user()->role->name == 'super admin')
           <li class="nav-item">

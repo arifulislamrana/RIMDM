@@ -5,6 +5,7 @@ use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\ClassController;
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\Notice\NoticeController as NoticeNoticeController;
 use App\Http\Controllers\NoticeController;
 use App\Http\Controllers\Student\StudentController;
 use App\Http\Controllers\Subject\SubjectController;
@@ -57,11 +58,13 @@ Route::resource('/teachers', TeacherController::class)->middleware('admin');
 
 Route::resource('/subjects', SubjectController::class)->middleware('admin');
 
+Route::resource('/notices', NoticeNoticeController::class)->middleware('admin');
+
 Route::get('/about', [AboutController::class, 'index'])->name('about');
 
 Route::get('/contact', [ContactController::class, 'index'])->name('contact');
 
-Route::get('/teachers', [TeachersController::class, 'index'])->name('teachers');
+Route::get('/teachersList', [TeachersController::class, 'index'])->name('teachers');
 
 Route::get('/blog', [BlogController::class, 'index'])->name('blog');
 

@@ -17,7 +17,6 @@ class CreateNoticesTable extends Migration
             $table->id();
             $table->string('heading');
             $table->text('body');
-            $table->string('img')->nullable();
             $table->string('file')->nullable();
             $table->timestamps();
         });
