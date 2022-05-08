@@ -13,4 +13,13 @@ class NoticeListModel
 
         return $notices;
     }
+
+    public function getRecentNotices()
+    {
+        $notices = DB::table('notices')
+            ->orderBy('created_at', 'desc')
+            ->get()->take(10);
+
+        return $notices;
+    }
 }
