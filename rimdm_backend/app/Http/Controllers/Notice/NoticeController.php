@@ -81,7 +81,17 @@ class NoticeController extends Controller
      */
     public function show($id)
     {
-        //
+        try
+        {
+            $noticeListModel = resolve('App\ViewModels\Notice\NoticeListModel');
+            return view('single_notice', ['notice' => $noticeListModel->getNoticeById($id)]);
+        }
+        catch (Exception $e)
+        {
+            $this->logger->write("error", "Failed to show Notice data", $e);
+
+            return response()->json(['error' => 'Failed to show Notice data'], 409);
+        }
     }
 
     /**

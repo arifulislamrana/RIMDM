@@ -70,4 +70,6 @@ Route::get('/blog', [BlogController::class, 'index'])->name('blog');
 
 Route::get('/noticeList', [NoticeController::class, 'index'])->name('notice');
 
+Route::get('/notice/{notice}', [NoticeController::class, 'show'])->name('notice.details');
+
 Route::get('/classes', [ClassController::class, 'index'])->name('classes');

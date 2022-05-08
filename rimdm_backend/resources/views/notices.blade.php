@@ -39,7 +39,7 @@
                                 <span class="arrow-r"><i class="fa fa-plus"></i><i class="fa fa-minus"></i></span>
                                 <span class="lecture-group-title">{{ $notice->heading }}</span>
                                 <span class="total-lectures-time">{{ date('Y-m-d', strtotime($notice->created_at ))}}</span>
-                                <span class="number-of-lectures"><a href="#">See more..</a></span>
+                                <span class="number-of-lectures"><a href="{{ Route('notice.details', ['notice' => $notice->id]) }}">See more..</a></span>
                             </h3>
                             @endforeach
                         </div>

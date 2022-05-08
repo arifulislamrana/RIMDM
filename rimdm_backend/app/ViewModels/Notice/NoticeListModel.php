@@ -22,4 +22,11 @@ class NoticeListModel
 
         return $notices;
     }
+
+    public function getNoticeById($id)
+    {
+        $notice = DB::table('notices')->find($id);
+
+        return $notice;
+    }
 }
