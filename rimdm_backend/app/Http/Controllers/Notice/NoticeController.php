@@ -19,7 +19,17 @@ class NoticeController extends Controller
 
     public function index()
     {
-        dd('Khali');
+        try
+        {
+            $noticeListModel = resolve('App\ViewModels\Notice\NoticeListModel');
+            return view('admin.notice.notice_list', ['notices' => $noticeListModel->getNotices()]);
+        }
+        catch (Exception $e)
+        {
+            $this->logger->write("error", "Failed to Store Notice data", $e);
+
+            return response()->json(['error' => 'Failed to Store Notice data'], 409);
+        }
     }
 
     public function create()

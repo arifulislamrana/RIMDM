@@ -1,15 +1,16 @@
 <?php
-namespace App\ViewModels\Teacher;
+namespace App\ViewModels\Notice;
 
-use App\Services\Teacher\ITeacherService;
+use Illuminate\Support\Facades\DB;
 
-class FrontTeachersModel
+class NoticeListModel
 {
-    private $teacherService;
-    public $teachers;
-
-    public function __construct(ITeacherService $teacherService)
+    public function getNotices()
     {
-        $this->teacherService = $teacherService;
+        $notices = DB::table('notices')
+            ->orderBy('created_at', 'desc')
+            ->get();
+
+        return $notices;
     }
 }
