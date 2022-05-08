@@ -64,6 +64,8 @@ Route::get('/about', [AboutController::class, 'index'])->name('about');
 
 Route::get('/contact', [ContactController::class, 'index'])->name('contact');
 
+Route::post('/contact/Q&A', [ContactController::class, 'contactWithAuth'])->name('contact.qa');
+
 Route::get('/teachersList', [TeachersController::class, 'index'])->name('teachers');
 
 Route::get('/blog', [BlogController::class, 'index'])->name('blog');

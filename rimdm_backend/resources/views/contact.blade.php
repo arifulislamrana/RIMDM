@@ -37,12 +37,12 @@
     <div class="col-12 col-lg-6">
         <div class="contact-form">
             <h3>Contact Form</h3>
-
-            <form>
-                <input type="text" placeholder="Your Name">
-                <input type="email" placeholder="Your Email">
-                <input type="text" placeholder="Subject">
-                <textarea placeholder="Your Message" rows="4"></textarea>
+            <form action="{{Route('contact.qa')}}" method="post" enctype="multipart/form-data">
+                @csrf
+                <input type="text" placeholder="Your Name" name="name">
+                <input type="email" placeholder="Your Email" name="email">
+                <input type="text" placeholder="Subject" name="subject">
+                <textarea placeholder="Your Message" rows="4" name="message"></textarea>
                 <input type="submit" value="Send Message">
             </form>
         </div><!-- .contact-form -->
@@ -52,12 +52,12 @@
         <div class="contact-info">
             <h3>Contact Information</h3>
 
-            <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia dese mollit anim id est laborum. </p>
+            <p>If you have any query or suggestion, please feel free to contact. </p>
 
             <ul class="p-0 m-0">
-                <li><span>Location:</span>40 Baria Sreet 133/2 NewYork City, US</li>
-                <li><span>Email:</span><a href="#">info.deeercreative@gmail.com</a></li>
-                <li><span>Phone:</span><a href="#">(203) 123-6666</a></li>
+                <li><span>Location:</span>Musapur, Compangpnj, Noakhali, Bangladesh</li>
+                <li><span>Email:</span><a href="#">rimdmadrasah@gmail.com</a></li>
+                <li><span>Phone:</span><a href="#">01629846484</a></li>
             </ul>
         </div><!-- .contact-info -->
     </div><!-- .col -->
