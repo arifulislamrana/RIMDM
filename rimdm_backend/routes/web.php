@@ -8,6 +8,7 @@ use App\Http\Controllers\ContactController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\Notice\NoticeController as NoticeNoticeController;
 use App\Http\Controllers\NoticeController;
+use App\Http\Controllers\Student\StudentAuthContrroller;
 use App\Http\Controllers\Student\StudentController;
 use App\Http\Controllers\Subject\SubjectController;
 use App\Http\Controllers\Teacher\AuthenticationController;
@@ -74,3 +75,5 @@ Route::get('/noticeList', [NoticeController::class, 'index'])->name('notice');
 Route::get('/notice/{notice}', [NoticeController::class, 'show'])->name('notice.details');
 
 Route::get('/classes', [ClassController::class, 'index'])->name('classes');
+
+Route::get('/student/login', [StudentAuthContrroller::class, 'showLoginForm'])->name('student.login');

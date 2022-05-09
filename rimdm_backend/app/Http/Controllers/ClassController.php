@@ -27,7 +27,7 @@ class ClassController extends Controller
         }
         catch (Exception $e)
         {
-            $this->logger->write("error", "Something went wrong in home page", $e);
+            $this->logger->write("error", "Something went wrong in classes page", $e);
 
             return response()->json(['error' => 'Oooppps something went wrong!!'], 409);
         }
