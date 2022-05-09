@@ -5,6 +5,7 @@ use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\ClassController;
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\Notice\NoticeController as NoticeNoticeController;
 use App\Http\Controllers\NoticeController;
 use App\Http\Controllers\Student\StudentController;
@@ -26,9 +27,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-})->name('index');
+Route::get('/', [HomeController::class, 'index'])->name('index');
 
 Route::get('/admin/{dashboard?}', [DashboardController::class, 'index'])
     ->where('dashboard', 'dashboard|home')
