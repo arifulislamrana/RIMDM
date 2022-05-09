@@ -353,7 +353,7 @@
                     </header><!-- .heading -->
                 </div><!-- .col -->
 
-                 @foreach ($homeModel->classes as $class)
+                @foreach ($homeModel->classes as $class)
                 <div class="col-12 col-md-6 col-lg-4 px-25">
                     <div class="course-content">
                         <figure class="course-thumbnail">
