@@ -2,8 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Client\Request as ClientRequest;
+use App\Mail\Contact;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Mail;
+use Illuminate\Http\Client\Request as ClientRequest;
 
 class ContactController extends Controller
 {
@@ -14,6 +17,19 @@ class ContactController extends Controller
 
     public function contactWithAuth(Request $request)
     {
-        dd($request);
+        $contactData = array(
+            'name'=>$request->name,
+            'message' => $request->message,
+            'subject' => $request->subject,
+            'email' => $request->email,
+            );
+
+        Mail::to('ariful.islam0683@gmail.com')->send(new Contact($contactData));
+
+        return redirect()->back()->with([
+            'success' => 'Message has been sent to the authority'
+        ]);
     }
+
+
 }
