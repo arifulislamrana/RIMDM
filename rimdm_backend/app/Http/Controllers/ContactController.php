@@ -26,9 +26,7 @@ class ContactController extends Controller
 
         Mail::to('ariful.islam0683@gmail.com')->send(new Contact($contactData));
 
-        return redirect()->back()->with([
-            'success' => 'Message has been sent to the authority'
-        ]);
+        return redirect()->back()->withSuccess('Submitted to authority');
     }
 
 

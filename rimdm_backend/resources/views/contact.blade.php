@@ -26,7 +26,12 @@
         </div><!-- .breadcrumbs -->
     </div><!-- .col -->
 </div><!-- .row -->
-
+@if (session('success'))
+  <div class="alert alert-success alert-dismissable custom-success-box" style="margin: 15px;">
+     <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+     <strong> {{ session('success') }} </strong>
+  </div>
+@endif
 <div class="row justify-content-between">
     <div class="col-12">
         <div class="contact-gmap">
