@@ -55,8 +55,17 @@
 
                             <div class="header-bar-menu">
                                 <ul class="flex justify-content-center align-items-center py-2 pt-md-0">
+                                    @auth
+                                    <li>
+                                        <img src="{{Auth::user()->image}}" class="img-circle elevation-2" alt="User Image" style="height: 25px; width: 30px; border-radius: 50%;">
+                                    </li>
+                                    <li><a href="{{ Route('student.show', ['id' => Auth::id()]) }}">Profile</a></li>
+                                    <li><a href="{{ Route('student.logout') }}">Logout</a></li>
+                                    @endauth
+                                    @guest
                                     <li><a href="#">Apply</a></li>
                                     <li><a href="{{ Route('student.login') }}">Login</a></li>
+                                    @endguest
                                 </ul>
                             </div><!-- .header-bar-menu -->
                         </div><!-- .col -->

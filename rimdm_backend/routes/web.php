@@ -77,3 +77,9 @@ Route::get('/notice/{notice}', [NoticeController::class, 'show'])->name('notice.
 Route::get('/classes', [ClassController::class, 'index'])->name('classes');
 
 Route::get('/student/login', [StudentAuthContrroller::class, 'showLoginForm'])->name('student.login');
+
+Route::post('/student/login/post', [StudentAuthContrroller::class, 'loginPost'])->name('student.loginPost');
+
+Route::get('/student/logout', [StudentAuthContrroller::class, 'logout'])->name('student.logout');
+
+Route::get('/student/myProfile/{id}', [StudentAuthContrroller::class, 'show'])->name('student.show')->middleware('auth');
