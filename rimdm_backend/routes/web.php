@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\Admin\AdminController;
+use App\Http\Controllers\ApplyController;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\ClassController;
 use App\Http\Controllers\ContactController;
@@ -83,3 +84,7 @@ Route::post('/student/login/post', [StudentAuthContrroller::class, 'loginPost'])
 Route::get('/student/logout', [StudentAuthContrroller::class, 'logout'])->name('student.logout');
 
 Route::get('/student/myProfile/{id}', [StudentAuthContrroller::class, 'show'])->name('student.show')->middleware('auth');
+
+Route::get('/student/apply', [ApplyController::class, 'apply'])->name('apply');
+
+Route::post('/student/apply/post', [ApplyController::class, 'applyPost'])->name('apply.post');

@@ -63,7 +63,7 @@
                                     <li><a href="{{ Route('student.logout') }}">Logout</a></li>
                                     @endauth
                                     @guest
-                                    <li><a href="#">Apply</a></li>
+                                    <li><a href="{{ Route('apply') }}">Apply</a></li>
                                     <li><a href="{{ Route('student.login') }}">Login</a></li>
                                     @endguest
                                 </ul>
