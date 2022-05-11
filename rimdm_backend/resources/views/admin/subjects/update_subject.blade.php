@@ -1,6 +1,6 @@
 @extends('admin._index')
 
-@section('title','createSubject')
+@section('title','updateSubject')
 
 @section('style')
 <link rel="stylesheet" href="../../back/plugins/select2/css/select2.min.css">
@@ -14,12 +14,12 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>Subject Form</h1>
+            <h1>Subject Update Form</h1>
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="#">Home</a></li>
-              <li class="breadcrumb-item active">Subject Form</li>
+              <li class="breadcrumb-item active">Subject Update Form</li>
             </ol>
           </div>
         </div>
@@ -35,7 +35,7 @@
             <!-- general form elements -->
             <div class="card card-primary">
               <div class="card-header">
-                <h3 class="card-title">Add New Subject</h3>
+                <h3 class="card-title">Update Subject</h3>
               </div>
               <!-- /.card-header -->
               <!-- form start -->

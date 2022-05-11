@@ -55,8 +55,17 @@
 
                             <div class="header-bar-menu">
                                 <ul class="flex justify-content-center align-items-center py-2 pt-md-0">
-                                    <li><a href="#">Apply</a></li>
-                                    <li><a href="#">Login</a></li>
+                                    @auth
+                                    <li>
+                                        <img src="{{Auth::user()->image}}" class="img-circle elevation-2" alt="User Image" style="height: 25px; width: 30px; border-radius: 50%;">
+                                    </li>
+                                    <li><a href="{{ Route('student.show', ['id' => Auth::id()]) }}">Profile</a></li>
+                                    <li><a href="{{ Route('student.logout') }}">Logout</a></li>
+                                    @endauth
+                                    @guest
+                                    <li><a href="{{ Route('apply') }}">Apply</a></li>
+                                    <li><a href="{{ Route('student.login') }}">Login</a></li>
+                                    @endguest
                                 </ul>
                             </div><!-- .header-bar-menu -->
                         </div><!-- .col -->
@@ -76,12 +85,12 @@
                         <div class="col-3 col-lg-9 flex justify-content-end align-content-center">
                             <nav class="site-navigation flex justify-content-end align-items-center">
                                 <ul class="flex flex-column flex-lg-row justify-content-lg-end align-content-center">
-                                    <li class="current-menu-item"><a href="index.html">Home</a></li>
-                                    <li><a href="#">About</a></li>
-                                    <li><a href="#">Classes</a></li>
-                                    <li><a href="#">Teachers</a></li>
-                                    <li><a href="#">Notice</a></li>
-                                    <li><a href="#">Contact</a></li>
+                                    <li class="current-menu-item"><a href="{{ Route('index') }}">Home</a></li>
+                                    <li><a href="{{ Route('about') }}">About</a></li>
+                                    <li><a href="{{ Route('classes') }}">Classes</a></li>
+                                    <li><a href="{{ Route('teachers') }}">Teachers</a></li>
+                                    <li><a href="{{ Route('notice') }}">Notice</a></li>
+                                    <li><a href="{{ Route('contact') }}">Contact</a></li>
                                 </ul>
 
                                 <div class="hamburger-menu d-lg-none">
@@ -102,7 +111,7 @@
         </header><!-- .site-header -->
 
     @yield('content')
-
+<hr>
     <footer class="site-footer">
         <div class="footer-widgets">
             <div class="container">
@@ -132,11 +141,12 @@
                             <h2 class="w-100">Quick Links</h2>
 
                             <ul class="w-50">
-                                <li><a href="#">About</a></li>
-                                <li><a href="#">Classes</a></li>
-                                <li><a href="#">Teachers</a></li>
-                                <li><a href="#">Notice</a></li>
-                                <li><a href="#">Contact</a></li>
+                                <li class="current-menu-item"><a href="{{ Route('index') }}">Home</a></li>
+                                <li><a href="{{ Route('about') }}">About</a></li>
+                                <li><a href="{{ Route('classes') }}">Classes</a></li>
+                                <li><a href="{{ Route('teachers') }}">Teachers</a></li>
+                                <li><a href="{{ Route('notice') }}">Notice</a></li>
+                                <li><a href="{{ Route('contact') }}">Contact</a></li>
                             </ul>
 
                         </div><!-- .quick-links -->

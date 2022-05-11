@@ -1,11 +1,21 @@
 <?php
 
+use App\Http\Controllers\AboutController;
 use App\Http\Controllers\Admin\AdminController;
+use App\Http\Controllers\ApplyController;
+use App\Http\Controllers\BlogController;
+use App\Http\Controllers\ClassController;
+use App\Http\Controllers\ContactController;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\Notice\NoticeController as NoticeNoticeController;
+use App\Http\Controllers\NoticeController;
+use App\Http\Controllers\Student\StudentAuthContrroller;
 use App\Http\Controllers\Student\StudentController;
 use App\Http\Controllers\Subject\SubjectController;
 use App\Http\Controllers\Teacher\AuthenticationController;
 use App\Http\Controllers\Teacher\DashBoardController;
 use App\Http\Controllers\Teacher\TeacherController;
+use App\Http\Controllers\TeachersController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -19,9 +29,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-})->name('index');
+Route::get('/', [HomeController::class, 'index'])->name('index');
 
 Route::get('/admin/{dashboard?}', [DashboardController::class, 'index'])
     ->where('dashboard', 'dashboard|home')
@@ -50,3 +58,33 @@ Route::resource('/admins', AdminController::class)->middleware('admin');
 Route::resource('/teachers', TeacherController::class)->middleware('admin');
 
 Route::resource('/subjects', SubjectController::class)->middleware('admin');
+
+Route::resource('/notices', NoticeNoticeController::class)->middleware('admin');
+
+Route::get('/about', [AboutController::class, 'index'])->name('about');
+
+Route::get('/contact', [ContactController::class, 'index'])->name('contact');
+
+Route::post('/contact/Q&A', [ContactController::class, 'contactWithAuth'])->name('contact.qa');
+
+Route::get('/teachersList', [TeachersController::class, 'index'])->name('teachers');
+
+Route::get('/blog', [BlogController::class, 'index'])->name('blog');
+
+Route::get('/noticeList', [NoticeController::class, 'index'])->name('notice');
+
+Route::get('/notice/{notice}', [NoticeController::class, 'show'])->name('notice.details');
+
+Route::get('/classes', [ClassController::class, 'index'])->name('classes');
+
+Route::get('/student/login', [StudentAuthContrroller::class, 'showLoginForm'])->name('student.login');
+
+Route::post('/student/login/post', [StudentAuthContrroller::class, 'loginPost'])->name('student.loginPost');
+
+Route::get('/student/logout', [StudentAuthContrroller::class, 'logout'])->name('student.logout');
+
+Route::get('/student/myProfile/{id}', [StudentAuthContrroller::class, 'show'])->name('student.show')->middleware('auth');
+
+Route::get('/student/apply', [ApplyController::class, 'apply'])->name('apply');
+
+Route::post('/student/apply/post', [ApplyController::class, 'applyPost'])->name('apply.post');
