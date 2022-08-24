@@ -97,7 +97,7 @@
                       <td>{{ $student->f_name }}</td>
                       <td> <img src="{{$student->image}}" alt="" style="border-radius: 50%; height: 50px; width: 65px"> </td>
                       <td style="text-align: center; display: flex">
-                        <button class="btn btn-info"><a href="{{ Route('student.show',['id' => $student->id]) }}" style="font-style: none; color: white">Details</a></button>
+                        <button class="btn btn-info"><a href="{{ Route('students.show',['id' => $student->id]) }}" style="font-style: none; color: white">Details</a></button>
                         <button class="btn btn-primary"><a href="{{ Route('student.edit', ['id' => $student->id]) }}" style="font-style: none; color: white">Update</a></button>
                         <button class="btn btn-danger" onclick="showModal({{$student->id}})" data-userid="{{$student->id}}">Delete</button>
                       </td>

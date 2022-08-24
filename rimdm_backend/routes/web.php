@@ -40,7 +40,6 @@ Route::prefix('/teacher')->group(function(){
     Route::get('/login', [AuthenticationController::class, 'login'])->name('teacher.login');
     Route::post('/loginPost', [AuthenticationController::class, 'loginPost'])->name('teacher.loginPost');
     Route::get('/logout', [AuthenticationController::class, 'logout'])->name('teacher.logout');
-    Route::get('/profile', function () {return view('teacher.profile');})->name('teacher.profile')->middleware('teacher');
 
 
     Route::get('/create/student', [StudentController::class, 'create'])->name('student.create')->middleware('admin');
@@ -49,7 +48,7 @@ Route::prefix('/teacher')->group(function(){
     Route::delete('/students/{id}', [StudentController::class, 'destroy'])->name('student.destroy')->middleware('admin');
     Route::put('/students/{id}', [StudentController::class, 'update'])->name('student.update')->middleware('admin');
     Route::get('/students/{id}/edit', [StudentController::class, 'edit'])->name('student.edit')->middleware('admin');
-    Route::get('/students/{id}', [StudentController::class, 'show'])->name('student.show')->middleware('admin');
+    Route::get('/students/{id}', [StudentController::class, 'show'])->name('students.show')->middleware('admin');
 
 });
 

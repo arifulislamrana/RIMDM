@@ -23,8 +23,7 @@ class AuthenticationController extends Controller
             if ($techerLoginModel->isValidTeacher($request))
             {
                 $request->session()->regenerate();
-
-                return redirect()->route('teacher.profile');
+                return redirect()->route('teachers.show', ['teacher' => Auth::guard('teacher')->user()->id]);
             }
 
             return redirect()->back()
