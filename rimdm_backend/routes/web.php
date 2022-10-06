@@ -5,6 +5,7 @@ use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\ApplyController;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\ClassController;
+use App\Http\Controllers\ClassLevel\ClassLevelController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\Notice\NoticeController as NoticeNoticeController;
@@ -53,6 +54,8 @@ Route::prefix('/teacher')->group(function(){
 });
 
 Route::resource('/admins', AdminController::class)->middleware('admin');
+
+Route::resource('/classLevels', ClassLevelController::class)->middleware('admin');
 
 Route::resource('/teachers', TeacherController::class)->middleware('admin');
 

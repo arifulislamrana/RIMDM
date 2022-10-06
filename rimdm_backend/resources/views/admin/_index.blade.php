@@ -281,6 +281,29 @@
               </li>
             </ul>
           </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-table"></i>
+              <p>
+                Classes
+                <i class="fas fa-angle-left right"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="{{ Route('classLevels.create') }}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Add Class</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{ Route('classLevels.index') }}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Classes List</p>
+                </a>
+              </li>
+            </ul>
+          </li>
           @endif
           @if (Auth::guard('teacher')->user()->role->name == 'super admin')
           <li class="nav-item">

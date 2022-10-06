@@ -33,11 +33,6 @@
   </div>
 @endif
 <div class="row justify-content-between">
-    <div class="col-12">
-        <div class="contact-gmap">
-            <iframe frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyAyCkIjViJ_7vt5PMIHai_NjcdR64QYycw&q=Space+Needle,Seattle+WA" allowfullscreen></iframe>
-        </div><!-- .contact-gmap -->
-    </div><!-- .col -->
 
     <div class="col-12 col-lg-6">
         <div class="contact-form">
