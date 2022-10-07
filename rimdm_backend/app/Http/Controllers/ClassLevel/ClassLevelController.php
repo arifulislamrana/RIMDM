@@ -55,9 +55,9 @@ class ClassLevelController extends Controller
         }
         catch (\Throwable $th)
         {
-            $this->logger->write("error", "Failed to Class create form", $th);
+            $this->logger->write("error", "Failed to show Class create form", $th);
 
-            return redirect()->back()->withErrors(['invalid' => 'Failed to Class create form']);
+            return redirect()->back()->withErrors(['invalid' => 'Failed to show Class create form']);
         }
     }
 
@@ -120,7 +120,22 @@ class ClassLevelController extends Controller
      */
     public function edit($id)
     {
-        dd($id);
+        try
+        {
+            $class = $this->model->find($id);
+
+            if(!empty($class))
+            {
+                return view('admin.classLevel.update_class', ['class' => $class]);
+            }
+            return redirect()->back()->withErrors(['invalid' => 'Cant Update']);
+        }
+        catch (\Throwable $th)
+        {
+            $this->logger->write("error", "Failed to show Class edit form", $th);
+
+            return redirect()->back()->withErrors(['invalid' => 'Failed to Class edit form']);
+        }
     }
 
     /**
@@ -132,7 +147,35 @@ class ClassLevelController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        try
+        {
+            if (empty($request->section))
+            {
+                $request->section = 'a';
+            }
+
+            $check = $this->model->where([
+                ['name', '=', strtolower($request->name),],
+                ['section', '=', strtolower($request->section),],
+            ])->get();
+
+            if (count($check) < 1)
+            {
+                $classes = $this->model->findOrFail($id)->update([
+                    'name' => strtolower($request->name),
+                    'section' => strtolower($request->section),
+                ]);
+
+                return redirect()->route('classLevels.index')->with(['message' => 'Class Updated']);
+            }
+            return redirect()->back()->withErrors(['invalid' => 'This Class already Exist']);
+        }
+        catch (\Throwable $th)
+        {
+            $this->logger->write("error", "Failed to Update Class", $th);
+
+            return redirect()->back()->withErrors(['invalid' => 'Failed to Update Class']);
+        }
     }
 
     /**
@@ -143,6 +186,23 @@ class ClassLevelController extends Controller
      */
     public function destroy($id)
     {
-        dd($id);
+        try
+        {
+            $check = $this->model->findOrFail($id);
+
+            if (!empty($check))
+            {
+                $this->model->destroy($id);
+
+                return redirect()->back()->with(['message' => 'Class Deleted']);
+            }
+            return redirect()->back()->withErrors(['invalid' => 'This Class cant be deleted']);
+        }
+        catch (\Throwable $th)
+        {
+            $this->logger->write("error", "Failed to delete Class", $th);
+
+            return redirect()->back()->withErrors(['invalid' => 'Failed to delete Class']);
+        }
     }
 }
