@@ -5,6 +5,7 @@ use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\ApplyController;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\ClassController;
+use App\Http\Controllers\ClassLevel\ClassLevelController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\Notice\NoticeController as NoticeNoticeController;
@@ -40,7 +41,6 @@ Route::prefix('/teacher')->group(function(){
     Route::get('/login', [AuthenticationController::class, 'login'])->name('teacher.login');
     Route::post('/loginPost', [AuthenticationController::class, 'loginPost'])->name('teacher.loginPost');
     Route::get('/logout', [AuthenticationController::class, 'logout'])->name('teacher.logout');
-    Route::get('/profile', function () {return view('teacher.profile');})->name('teacher.profile')->middleware('teacher');
 
 
     Route::get('/create/student', [StudentController::class, 'create'])->name('student.create')->middleware('admin');
@@ -49,11 +49,13 @@ Route::prefix('/teacher')->group(function(){
     Route::delete('/students/{id}', [StudentController::class, 'destroy'])->name('student.destroy')->middleware('admin');
     Route::put('/students/{id}', [StudentController::class, 'update'])->name('student.update')->middleware('admin');
     Route::get('/students/{id}/edit', [StudentController::class, 'edit'])->name('student.edit')->middleware('admin');
-    Route::get('/students/{id}', [StudentController::class, 'show'])->name('student.show')->middleware('admin');
+    Route::get('/students/{id}', [StudentController::class, 'show'])->name('students.show')->middleware('admin');
 
 });
 
 Route::resource('/admins', AdminController::class)->middleware('admin');
+
+Route::resource('/classLevels', ClassLevelController::class)->middleware('admin');
 
 Route::resource('/teachers', TeacherController::class)->middleware('admin');
 

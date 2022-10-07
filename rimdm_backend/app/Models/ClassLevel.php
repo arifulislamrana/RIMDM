@@ -13,6 +13,7 @@ class ClassLevel extends Model
 
     protected $fillable = [
         'name',
+        'section',
     ];
 
 

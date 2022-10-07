@@ -1,12 +1,10 @@
 @extends('admin._index')
 
-@section('title','Students Table')
+@section('title','Classes Table')
 
 @section('style')
 <link rel="stylesheet" href="../../back/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
 <link rel="stylesheet" href="../../back/plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
-<link rel="stylesheet" href="../../back/plugins/select2/css/select2.min.css">
-<link rel="stylesheet" href="../../back/plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css">
 @endsection
 
 @section('content')
@@ -16,29 +14,15 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>Students Tables</h1>
+            <h1>Classes Table</h1>
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="#">Home</a></li>
-              <li class="breadcrumb-item active">Students Table</li>
+              <li class="breadcrumb-item active">Classes Table</li>
             </ol>
           </div>
         </div>
-        <form action="{{ Route('student.index') }}" id="form-1" method="GET" enctype="multipart/form-data">
-          @csrf
-          <div class="card-body row">
-              <div class="form-group col-md-4">
-                <label>Select Class</label>
-                <select class="form-control select1" style="width: 100%;" name="class" value="{{old('class')}}"  onchange="submitForm()" required>
-                  <option>Select class for students list</option>
-                  @foreach ($StudentTableModel->classes as $classLevel)
-                  <option value="{{$classLevel->id}}">{{ $classLevel->name }}</option>
-                  @endforeach
-                </select>
-              </div>
-          </div>
-        </form>
       </div><!-- /.container-fluid -->
     </section>
 
@@ -64,55 +48,55 @@
                 @endif
 
                 @if(session()->has('message'))
-                <div class="alert alert-success">
-                    {{ session()->get('message') }}
+                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                  <ul class="p-0 m-0" style="list-style: none;">
+                    <li>{{ session()->get('message') }}</li>
+                  </ul>
                 </div>
                 @endif
 
-                <h3 class="card-title">Students of class: {{ $StudentTableModel->classOfsearchingStudents->name  }}</h3>
+                <h3 class="card-title">Classes List</h3>
               </div>
               <!-- /.card-header -->
               <div class="card-body">
 
-                @if ($StudentTableModel->studentsCount < 1)
-                <h2 style="text-align: center"> No students Exists in class: {{ $StudentTableModel->classOfsearchingStudents->name  }}</h2>
+                @if (count($classes) < 1)
+                <h2 style="text-align: center"> No Class Level Exists.</h2>
                 @else
                 <table id="example2" class="table table-bordered table-hover">
                   <thead>
                     <tr>
-                      <th>Roll</th>
-                      <th>Name</th>
-                      <th>Father</th>
-                      <th>Image</th>
-                      <th>Actions</th>
+                      <th>Class Level Name</th>
+                      <th>Section</th>
+                      <th>Action</th>
                     </tr>
                   </thead>
                   <tbody>
 
-                    @foreach ($StudentTableModel->students as $student)
+                    @foreach ($classes as $class)
                     <tr>
-                      <td>{{ $student->roll }}</td>
-                      <td>{{ $student->name }}
-                      </td>
-                      <td>{{ $student->f_name }}</td>
-                      <td> <img src="{{$student->image}}" alt="" style="border-radius: 50%; height: 50px; width: 65px"> </td>
+                      <td>{{ $class->name }}</td>
+                      <td>{{ $class->section }}</td>
                       <td style="text-align: center; display: flex">
-                        <button class="btn btn-info"><a href="{{ Route('students.show',['id' => $student->id]) }}" style="font-style: none; color: white">Details</a></button>
-                        <button class="btn btn-primary"><a href="{{ Route('student.edit', ['id' => $student->id]) }}" style="font-style: none; color: white">Update</a></button>
-                        <button class="btn btn-danger" onclick="showModal({{$student->id}})" data-userid="{{$student->id}}">Delete</button>
+                        <button class="btn btn-info"><a href="{{ Route('classLevels.show', ['classLevel' => $class->id]) }}" style="font-style: none; color: white">Details</a></button>
+                        <button class="btn btn-primary"><a href="{{ Route('classLevels.edit', ['classLevel' => $class->id]) }}" style="font-style: none; color: white">Update</a></button>
+                        <button class="btn btn-danger" onclick="showModal({{$class->id}})" data-userid="{{$class->id}}">Delete</button>
                       </td>
                     </tr>
-                    <div id="applicantDeleteModal-{{$student->id}}" class="modal modal-danger fade" tabindex="-1" role="dialog" aria-labelledby="custom-width-modalLabel" aria-hidden="true" style="display: none;">
+                    <div id="applicantDeleteModal-{{$class->id}}" class="modal modal-danger fade" tabindex="-1" role="dialog" aria-labelledby="custom-width-modalLabel" aria-hidden="true" style="display: none;">
                       <div class="modal-dialog" style="width:55%;">
                           <div class="modal-content">
-                              <form action="{{route('student.destroy', ['id' => $student->id])}}" method="POST" class="remove-record-model">
+                              <form action="{{ Route('classLevels.destroy', ['classLevel' => $class->id]) }}" method="POST" class="remove-record-model">
                                 @csrf
                                 {{ method_field('delete') }}
                                 <div class="modal-header">
                                     <h4 class="modal-title text-center" id="custom-width-modalLabel">Delete Alert</h4>
                                 </div>
                                 <div class="modal-body">
-                                    <h4>Delete This Student?</h4>
+                                    <h4>Delete This ClassLevel.?</h4>
                                 </div>
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-default waves-effect" data-dismiss="modal">NO</button>
@@ -122,16 +106,15 @@
                           </div>
                       </div>
                     </div>
+                    </tr>
                     @endforeach
 
                   </tbody>
                   <tfoot>
                   <tr>
-                    <th>Roll</th>
-                    <th>Name</th>
-                    <th>Father</th>
-                    <th>Image</th>
-                    <th>Actions</th>
+                    <th>Class Level Name</th>
+                    <th>Section</th>
+                    <th>Action</th>
                   </tr>
                   </tfoot>
                 </table>
@@ -175,22 +158,5 @@
         "responsive": true,
       });
     });
-  </script>
-  <script src="../../back/plugins/select2/js/select2.full.min.js"></script>
-  <script>
-      $(function () {
-        //Initialize Select2 Elements
-        $('.select2').select2()
-        //Initialize Select2 Elements
-        $('.select2bs4').select2({
-          theme: 'bootstrap4'
-        })
-      })
-  </script>
-  <script>
-    function submitForm() {
-        const form = document.getElementById(`form-1`);
-        form.submit();
-    }
 </script>
 @endsection
