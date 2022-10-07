@@ -49,7 +49,16 @@ class ClassLevelController extends Controller
      */
     public function create()
     {
-        //
+        try
+        {
+            return view('admin.classLevel.create_class');
+        }
+        catch (\Throwable $th)
+        {
+            $this->logger->write("error", "Failed to Class create form", $th);
+
+            return redirect()->back()->withErrors(['invalid' => 'Failed to Class create form']);
+        }
     }
 
     /**
@@ -60,7 +69,36 @@ class ClassLevelController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        try
+        {
+            if (empty($request->section))
+            {
+                $request->section = 'a';
+            }
+
+            $check = $this->model->where([
+                ['name', '=', strtolower($request->name),],
+                ['section', '=', strtolower($request->section),],
+            ])->get();
+
+            if (count($check) < 1)
+            {
+                $classes = $this->model->create([
+                    'name' => strtolower($request->name),
+                    'section' => strtolower($request->section),
+                ]);
+
+                return redirect()->route('classLevels.index')->with(['message' => 'New Class Created']);
+            }
+            return redirect()->back()->withErrors(['invalid' => 'This Class already Exist']);
+        }
+        catch (\Throwable $th)
+        {
+            $this->logger->write("error", "Cant create new class", $th);
+
+            return redirect()->back()->withErrors(['invalid' => 'Cant create new class']);
+        }
+
     }
 
     /**
