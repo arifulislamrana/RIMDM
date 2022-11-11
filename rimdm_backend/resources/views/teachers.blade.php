@@ -49,6 +49,9 @@
                     <h3>{{ $teacher->name }}</h3>
                     <h4>{{ $teacher->designation }}</h4>
                     <h4><i class="fa fa-phone"></i>: {{ $teacher->phone }}</h4>
+                    <footer class="entry-footer read-more">
+                        <a href="{{ Route('showTeacherToUsers', ['id' => $teacher->id]) }}"><button type="button" class="btn btn-primary">Details</button></a>
+                    </footer>
                 </div><!-- .team-member -->
             </div><!-- .col -->
             @endforeach

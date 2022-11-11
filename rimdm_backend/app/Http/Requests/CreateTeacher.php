@@ -28,7 +28,7 @@ class CreateTeacher extends FormRequest
             'name' => 'required',
             'designation' => 'required',
             'qualification' => 'required',
-            'phone' => 'required',
+            'phone' => 'required|digits:11',
             'email' => 'required',
             //'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             'password' => 'required|min:6',

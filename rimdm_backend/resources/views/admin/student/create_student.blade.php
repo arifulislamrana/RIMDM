@@ -73,7 +73,7 @@
                     </div>
                     <div class="form-group col-md-6">
                         <label for="exampleInputMobile1">Mobile no.</label>
-                        <input type="text" class="form-control" placeholder="Enter Student Mobile no." name="phone" value="{{old('phone')}}" required>
+                        <input type="tel" class="form-control" placeholder="Enter Student Mobile no." name="phone" value="{{old('phone')}}" required>
                     </div>
                     <div class="form-group col-md-6">
                         <label for="exampleInputEmail1">Email address</label>

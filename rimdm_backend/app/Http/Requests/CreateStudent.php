@@ -31,7 +31,7 @@ class CreateStudent extends FormRequest
             'mname' => 'required',
             'dob' => 'required',
             'roll' => 'required',
-            'phone' => 'required',
+            'phone' => 'required|digits:11',
             'email' => 'required',
             'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             'class' => 'required',

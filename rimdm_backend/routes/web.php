@@ -59,6 +59,8 @@ Route::resource('/classLevels', ClassLevelController::class)->middleware('admin'
 
 Route::resource('/teachers', TeacherController::class)->middleware('admin');
 
+Route::get('/teacher/profile/{id}', [DashBoardController::class, 'showTeacherwhoIsNotAdmin'])->name('teacher.profile');
+
 Route::resource('/subjects', SubjectController::class)->middleware('admin');
 
 Route::resource('/notices', NoticeNoticeController::class)->middleware('admin');
@@ -90,3 +92,7 @@ Route::get('/student/myProfile/{id}', [StudentAuthContrroller::class, 'show'])->
 Route::get('/student/apply', [ApplyController::class, 'apply'])->name('apply');
 
 Route::post('/student/apply/post', [ApplyController::class, 'applyPost'])->name('apply.post');
+
+Route::get('/show/class/{id}', [ClassController::class, 'showClass'])->name('showClass');
+
+Route::get('/public/profile/teacher/{id}', [App\Http\Controllers\TeachersController::class, 'showTeacher'])->name('showTeacherToUsers');

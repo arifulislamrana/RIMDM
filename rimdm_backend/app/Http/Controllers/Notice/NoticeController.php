@@ -7,6 +7,7 @@ use App\Utility\ILogger;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\CreateNoticeRequest;
+use App\Models\Notice;
 
 class NoticeController extends Controller
 {
@@ -125,6 +126,8 @@ class NoticeController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Notice::destroy($id);
+
+        return redirect()->back();
     }
 }

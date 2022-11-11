@@ -357,16 +357,16 @@
                 <div class="col-12 col-md-6 col-lg-4 px-25">
                     <div class="course-content">
                         <figure class="course-thumbnail">
-                            <a href="#"><img src="/front/images/classLevel.jpg" alt=""></a>
+                            <a href="{{ Route('showClass', ['id' => $class->id]) }}"><img src="/front/images/classLevel.jpg" alt=""></a>
                         </figure><!-- .course-thumbnail -->
 
                         <div class="course-content-wrap">
                             <header class="entry-header">
-                                <h2 class="entry-title"><a href="#">Class: {{ $class->name }}</a></h2>
+                                <h2 class="entry-title"><a href="{{ Route('showClass', ['id' => $class->id]) }}">Class: {{ $class->name }}</a></h2>
 
                                 <div class="entry-meta flex align-items-center">
                                     <div class="course-author"><a href="#">Total Subjects </a></div>
-                                    <div class="course-date">{{ $homeModel->noOfsubjectsAcordingToClasses[$class->id] }}</div>
+                                    <div class="course-date">{{ count($class->Subjects )}}</div>
                                 </div><!-- .course-date -->
                             </header><!-- .entry-header -->
                         </div><!-- .course-content-wrap -->

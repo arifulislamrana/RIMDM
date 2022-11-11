@@ -27,7 +27,7 @@ class AdminCheck
 
             if (($teacher->role->name != 'admin') && ($teacher->role->name != 'super admin'))
             {
-                return redirect()->route('teacher.profile');
+                return redirect()->route('teacher.profile',['id' => $teacher->id]);
             }
 
             return $next($request);
