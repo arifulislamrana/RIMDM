@@ -1,6 +1,6 @@
 @extends('admin._index')
 
-@section('title','Notice List')
+@section('title','post List')
 
 @section('style')
 <link rel="stylesheet" href="../../back/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
@@ -14,12 +14,12 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>Notice Tables</h1>
+            <h1>Post Tables</h1>
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="#">Home</a></li>
-              <li class="breadcrumb-item active">Admins Table</li>
+              <li class="breadcrumb-item active">Post Table</li>
             </ol>
           </div>
         </div>
@@ -52,8 +52,6 @@
                     {{ session()->get('message') }}
                 </div>
                 @endif
-
-                <h3 class="card-title">Admins  &  Super Admins</h3>
               </div>
               <!-- /.card-header -->
               <div class="card-body">
@@ -62,34 +60,32 @@
                     <tr>
                       <th>Heading</th>
                       <th>File</th>
-                      <th>Created_at</th>
                       <th>Actions</th>
                     </tr>
                   </thead>
                   <tbody>
 
-                    @foreach ($notices as $notice)
+                    @foreach ($posts as $post)
                     <tr>
-                      <td>{{ $notice->heading }}</td>
-                      <td>{{ $notice->created_at }}</td>
-                      <td><embed src="{{$notice->file}}" width="400px" height="200px" /></td>
+                      <td>{{ $post->heading }}</td>
+                      <td><embed src="{{$post->file}}" width="400px" height="200px" /></td>
                       <td style="text-align: center; display: flex">
-                        <button class="btn btn-info"><a href="{{ Route('notices.show', ['notice' => $notice->id]) }}" style="font-style: none; color: white">Details</a></button>
-                        <button class="btn btn-primary"><a href="{{ Route('notices.edit', ['notice' => $notice->id]) }}" style="font-style: none; color: white">Update</a></button>
-                        <button class="btn btn-danger" onclick="showModal({{$notice->id}})" data-userid="{{$notice->id}}">Remove</button>
+                        <button class="btn btn-info"><a href="{{ Route('posts.show', ['post' => $post->id]) }}" style="font-style: none; color: white">Details</a></button>
+                        <button class="btn btn-primary"><a href="{{ Route('posts.edit', ['post' => $post->id]) }}" style="font-style: none; color: white">Update</a></button>
+                        <button class="btn btn-danger" onclick="showModal({{$post->id}})" data-userid="{{$post->id}}">Remove</button>
                       </td>
                     </tr>
-                    <div id="applicantDeleteModal-{{$notice->id}}" class="modal modal-danger fade" tabindex="-1" role="dialog" aria-labelledby="custom-width-modalLabel" aria-hidden="true" style="display: none;">
+                    <div id="applicantDeleteModal-{{$post->id}}" class="modal modal-danger fade" tabindex="-1" role="dialog" aria-labelledby="custom-width-modalLabel" aria-hidden="true" style="display: none;">
                       <div class="modal-dialog" style="width:55%;">
                           <div class="modal-content">
-                              <form action="{{ Route('notices.destroy', ['notice' => $notice->id]) }}" method="POST" class="remove-record-model">
+                              <form action="{{ Route('posts.destroy', ['post' => $post->id]) }}" method="POST" class="remove-record-model">
                                 @csrf
                                 {{ method_field('delete') }}
                                 <div class="modal-header">
                                     <h4 class="modal-title text-center" id="custom-width-modalLabel">Remove Alert</h4>
                                 </div>
                                 <div class="modal-body">
-                                    <h4>Remove This Admin?</h4>
+                                    <h4>Remove This Post?</h4>
                                 </div>
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-default waves-effect" data-dismiss="modal">NO</button>
@@ -105,7 +101,6 @@
                   <tfoot>
                   <tr>
                     <th>Name</th>
-                    <th>Created_at</th>
                     <th>File</th>
                     <th>Actions</th>
                   </tr>
