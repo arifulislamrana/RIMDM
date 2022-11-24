@@ -43,4 +43,9 @@ class Teacher extends Authenticatable
     {
         return $this->hasMany(Subject::class);
     }
+
+    public function posts()
+    {
+        return $this->hasMany(Post::class);
+    }
 }

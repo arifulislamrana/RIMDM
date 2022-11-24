@@ -27,6 +27,11 @@ class ClassLevel extends Model
         return $this->hasMany(Subject::class);
     }
 
+    public function posts()
+    {
+        return $this->hasMany(Post::class);
+    }
+
     public function teachers()
     {
         return $this->belongsToMany(Teacher::class,'class_level_teacher');

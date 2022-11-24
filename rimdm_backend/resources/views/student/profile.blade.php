@@ -379,8 +379,33 @@
                   <!-- /.tab-pane -->
 
                   <div class="tab-pane" id="settings">
-                    Class teachers Post will be included
-                  </div>
+                    Latest Post by your teachers
+                    @foreach (Auth::user()->classLevel->posts as $post)
+                    <form class="form-horizontal">
+                        <div class="form-group row">
+                            <label for="inputName" class="col-sm-2 col-form-label">Author</label>
+                            <div class="col-sm-10">
+                              {{ $post->teacher->name }}
+                            </div>
+                          </div>
+                        <div class="form-group row">
+                          <label for="inputName" class="col-sm-2 col-form-label">Heading</label>
+                          <div class="col-sm-10">
+                            {{ $post->heading }}
+                          </div>
+                        </div>
+
+
+                        <div class="form-group row">
+                          <label for="inputName2" class="col-sm-2 col-form-label">File</label>
+                          <div class="col-sm-10">
+                            <embed src="{{$post->file}}" width="700px" height="400px" />
+                          </div>
+                        </div>
+                      </form>
+                      <hr>
+                      @endforeach
+                    </div>
                   <!-- /.tab-pane -->
                 </div>
                 <!-- /.tab-content -->

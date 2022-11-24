@@ -10,6 +10,7 @@ use App\Http\Controllers\ContactController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\Notice\NoticeController as NoticeNoticeController;
 use App\Http\Controllers\NoticeController;
+use App\Http\Controllers\Post\PostController;
 use App\Http\Controllers\Student\StudentAuthContrroller;
 use App\Http\Controllers\Student\StudentController;
 use App\Http\Controllers\Subject\SubjectController;
@@ -96,3 +97,5 @@ Route::post('/student/apply/post', [ApplyController::class, 'applyPost'])->name(
 Route::get('/show/class/{id}', [ClassController::class, 'showClass'])->name('showClass');
 
 Route::get('/public/profile/teacher/{id}', [App\Http\Controllers\TeachersController::class, 'showTeacher'])->name('showTeacherToUsers');
+
+Route::resource('/posts', PostController::class);
